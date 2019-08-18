@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Script Authors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author first name</th>
+      <th>Author last name</th>
+      <th>Author website</th>
+      <th>Author github</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @script_authors.each do |script_author| %>
+      <tr>
+        <td><%= script_author.author_first_name %></td>
+        <td><%= script_author.author_last_name %></td>
+        <td><%= script_author.author_website %></td>
+        <td><%= script_author.author_github %></td>
+        <td><%= link_to 'Show', script_author %></td>
+        <td><%= link_to 'Edit', edit_script_author_path(script_author) %></td>
+        <td><%= link_to 'Destroy', script_author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Script Author', new_script_author_path %>

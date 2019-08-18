@@ -1,0 +1,22 @@
+<%= form_with(model: snippet_url, local: true) do |form| %>
+  <% if snippet_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(snippet_url.errors.count, "error") %> prohibited this snippet_url from being saved:</h2>
+
+      <ul>
+        <% snippet_url.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :script_url %>
+    <%= form.text_field :script_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

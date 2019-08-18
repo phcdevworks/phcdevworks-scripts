@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author first name:</strong>
+  <%= @script_author.author_first_name %>
+</p>
+
+<p>
+  <strong>Author last name:</strong>
+  <%= @script_author.author_last_name %>
+</p>
+
+<p>
+  <strong>Author website:</strong>
+  <%= @script_author.author_website %>
+</p>
+
+<p>
+  <strong>Author github:</strong>
+  <%= @script_author.author_github %>
+</p>
+
+<%= link_to 'Edit', edit_script_author_path(@script_author) %> |
+<%= link_to 'Back', script_authors_path %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Listing title:</strong>
+  <%= @script_listing.listing_title %>
+</p>
+
+<p>
+  <strong>Listing description:</strong>
+  <%= @script_listing.listing_description %>
+</p>
+
+<p>
+  <strong>Listing script source:</strong>
+  <%= @script_listing.listing_script_source %>
+</p>
+
+<p>
+  <strong>Listing script website:</strong>
+  <%= @script_listing.listing_script_website %>
+</p>
+
+<p>
+  <strong>Listing script repo:</strong>
+  <%= @script_listing.listing_script_repo %>
+</p>
+
+<p>
+  <strong>Listing script initial release:</strong>
+  <%= @script_listing.listing_script_initial_release %>
+</p>
+
+<p>
+  <strong>Listing script lastest release:</strong>
+  <%= @script_listing.listing_script_lastest_release %>
+</p>
+
+<p>
+  <strong>Listing script beta release:</strong>
+  <%= @script_listing.listing_script_beta_release %>
+</p>
+
+<p>
+  <strong>Listing script lastest release cdn:</strong>
+  <%= @script_listing.listing_script_lastest_release_cdn %>
+</p>
+
+<p>
+  <strong>Listing script status:</strong>
+  <%= @script_listing.listing_script_status %>
+</p>
+
+<%= link_to 'Edit', edit_script_listing_path(@script_listing) %> |
+<%= link_to 'Back', script_listings_path %>

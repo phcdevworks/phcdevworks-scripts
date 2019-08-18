@@ -1,0 +1,22 @@
+<%= form_with(model: script_url, local: true) do |form| %>
+  <% if script_url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(script_url.errors.count, "error") %> prohibited this script_url from being saved:</h2>
+
+      <ul>
+        <% script_url.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :script_cdn_url %>
+    <%= form.text_field :script_cdn_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Script url:</strong>
+  <%= @snippet_url.script_url %>
+</p>
+
+<%= link_to 'Edit', edit_snippet_url_path(@snippet_url) %> |
+<%= link_to 'Back', snippet_urls_path %>

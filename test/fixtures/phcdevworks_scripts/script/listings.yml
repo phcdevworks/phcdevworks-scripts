@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing_title: MyString
+  listing_description: MyString
+  listing_script_source: MyString
+  listing_script_website: MyString
+  listing_script_repo: MyString
+  listing_script_initial_release: 2019-08-18
+  listing_script_lastest_release: 2019-08-18
+  listing_script_beta_release: 2019-08-18
+  listing_script_lastest_release_cdn: 2019-08-18
+  listing_script_status: MyString
+
+two:
+  listing_title: MyString
+  listing_description: MyString
+  listing_script_source: MyString
+  listing_script_website: MyString
+  listing_script_repo: MyString
+  listing_script_initial_release: 2019-08-18
+  listing_script_lastest_release: 2019-08-18
+  listing_script_beta_release: 2019-08-18
+  listing_script_lastest_release_cdn: 2019-08-18
+  listing_script_status: MyString

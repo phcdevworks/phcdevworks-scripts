@@ -1,0 +1,67 @@
+<%= form_with(model: script_listing, local: true) do |form| %>
+  <% if script_listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(script_listing.errors.count, "error") %> prohibited this script_listing from being saved:</h2>
+
+      <ul>
+        <% script_listing.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :listing_title %>
+    <%= form.text_field :listing_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_description %>
+    <%= form.text_field :listing_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_script_source %>
+    <%= form.text_field :listing_script_source %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_script_website %>
+    <%= form.text_field :listing_script_website %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_script_repo %>
+    <%= form.text_field :listing_script_repo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_script_initial_release %>
+    <%= form.date_select :listing_script_initial_release %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_script_lastest_release %>
+    <%= form.date_select :listing_script_lastest_release %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_script_beta_release %>
+    <%= form.date_select :listing_script_beta_release %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_script_lastest_release_cdn %>
+    <%= form.date_select :listing_script_lastest_release_cdn %>
+  </div>
+
+  <div class="field">
+    <%= form.label :listing_script_status %>
+    <%= form.text_field :listing_script_status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

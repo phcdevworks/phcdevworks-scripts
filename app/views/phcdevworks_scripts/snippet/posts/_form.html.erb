@@ -1,0 +1,27 @@
+<%= form_with(model: snippet_post, local: true) do |form| %>
+  <% if snippet_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(snippet_post.errors.count, "error") %> prohibited this snippet_post from being saved:</h2>
+
+      <ul>
+        <% snippet_post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :snippet_title %>
+    <%= form.text_field :snippet_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :snippet_code %>
+    <%= form.text_area :snippet_code %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

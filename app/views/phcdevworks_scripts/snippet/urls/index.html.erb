@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Snippet Urls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Script url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @snippet_urls.each do |snippet_url| %>
+      <tr>
+        <td><%= snippet_url.script_url %></td>
+        <td><%= link_to 'Show', snippet_url %></td>
+        <td><%= link_to 'Edit', edit_snippet_url_path(snippet_url) %></td>
+        <td><%= link_to 'Destroy', snippet_url, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Snippet Url', new_snippet_url_path %>

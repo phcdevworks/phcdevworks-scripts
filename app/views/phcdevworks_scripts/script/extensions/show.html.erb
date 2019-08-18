@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Script extension name:</strong>
+  <%= @script_extension.script_extension_name %>
+</p>
+
+<p>
+  <strong>Script extension description:</strong>
+  <%= @script_extension.script_extension_description %>
+</p>
+
+<p>
+  <strong>Script extension:</strong>
+  <%= @script_extension.script_extension %>
+</p>
+
+<%= link_to 'Edit', edit_script_extension_path(@script_extension) %> |
+<%= link_to 'Back', script_extensions_path %>
