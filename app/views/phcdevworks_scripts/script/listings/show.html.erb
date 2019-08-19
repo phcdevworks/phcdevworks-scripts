@@ -1,54 +1,48 @@
-<p id="notice"><%= notice %></p>
+<!-- Title System -->
+<% phc_title "Script Listings Manager" %>
+<% phc_title_tagline "Script Listing Details" %>
+<% phc_breadcrumb_one link_to "Script Index", phcscriptcdn.script_listings_path %>
+<% phc_breadcrumb_two yield(:phc_title_tagline) %>
+<!-- Title System -->
 
-<p>
-  <strong>Listing title:</strong>
-  <%= @script_listing.listing_title %>
-</p>
+<!-- Page Bradcrumbs -->
+<ol class="breadcrumb pull-right">
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_two) %></li>
+	<li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_three) %></li>
+</ol>
+<!-- Page Bradcrumbs -->
 
-<p>
-  <strong>Listing description:</strong>
-  <%= @script_listing.listing_description %>
-</p>
+<!-- Page Header -->
+<h1 class="page-header"><%= yield(:phc_title) %></h1>
+<!-- Page Header -->
 
-<p>
-  <strong>Listing script source:</strong>
-  <%= @script_listing.listing_script_source %>
-</p>
+<!-- Page Content -->
+<div class="row">
 
-<p>
-  <strong>Listing script website:</strong>
-  <%= @script_listing.listing_script_website %>
-</p>
+	<!-- Button Panel -->
+	<div class="col-lg-4">
 
-<p>
-  <strong>Listing script repo:</strong>
-  <%= @script_listing.listing_script_repo %>
-</p>
+		<div class="panel panel-inverse">
+			<div class="panel-heading">
+				<div class="panel-heading-btn">
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="btn-group d-flex" role="group">
+					<%= link_to 'Update', phcscriptcdn.edit_script_listing_path, class: "btn btn-primary" %>
+					<%= link_to 'Remove', phcscriptcdn.script_listing_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+				</div>
+			</div>
+		</div>
 
-<p>
-  <strong>Listing script initial release:</strong>
-  <%= @script_listing.listing_script_initial_release %>
-</p>
+	</div>
+	<!-- Button Panel -->
 
-<p>
-  <strong>Listing script lastest release:</strong>
-  <%= @script_listing.listing_script_lastest_release %>
-</p>
+	<!-- Main Panel -->
+	<div class="col-lg-8">
+	</div>
+	<!-- Main Panel -->
 
-<p>
-  <strong>Listing script beta release:</strong>
-  <%= @script_listing.listing_script_beta_release %>
-</p>
-
-<p>
-  <strong>Listing script lastest release cdn:</strong>
-  <%= @script_listing.listing_script_lastest_release_cdn %>
-</p>
-
-<p>
-  <strong>Listing script status:</strong>
-  <%= @script_listing.listing_script_status %>
-</p>
-
-<%= link_to 'Edit', edit_script_listing_path(@script_listing) %> |
-<%= link_to 'Back', script_listings_path %>
+</div>
+<!-- Page Content -->

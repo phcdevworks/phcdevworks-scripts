@@ -1,22 +1,22 @@
-<%= form_with(model: snippet_url, local: true) do |form| %>
-  <% if snippet_url.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(snippet_url.errors.count, "error") %> prohibited this snippet_url from being saved:</h2>
+<!-- Form - Script - Url -->
+<%= form_with(model: [ @script_snippet, @script_url], url: form_url, local: true) do |form| %>
 
-      <ul>
-        <% snippet_url.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<!-- PHCNotifi Render Validation -->
+	<%= render 'phcnotifi/default/validations', :object => @script_url %>
+	<!-- PHCNotifi Render Validation -->
 
-  <div class="field">
-    <%= form.label :script_url %>
-    <%= form.text_field :script_url %>
-  </div>
+	<!-- Form Input Fields -->
+	<div class="form-group field_with_errors">
+		<%= form.label :script_url %>
+		<%= form.text_field :script_url, class: 'form-control', placeholder: 'Script Url'  %>
+	</div>
+	<!-- Form Input Fields -->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+	<!-- Form Submition Button -->
+	<div class="actions">
+		<%= form.submit class: "btn btn-primary" %>
+	</div>
+	<!-- For Submition Button -->
+
 <% end %>
+<!-- Form - Script - Url -->

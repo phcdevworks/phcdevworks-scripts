@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors     = ["PHCDevworks"]
   spec.email       = ["developers@phcdevworks.com"]
   spec.homepage    = "https://phcdevworks.com/"
-  spec.summary     = "Rails 6 CMS Engine"
-  spec.description = "Ruby on Rails 6 CMS engine to manage your Rails site's articles, categories and media."
+  spec.summary     = "Rails 6 Script Engine"
+  spec.description = "Ruby on Rails 6 script management engine for website script CDN and snippet listings."
   spec.license     = "MIT"
   
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

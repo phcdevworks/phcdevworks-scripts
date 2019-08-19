@@ -1,32 +1,28 @@
 <%= form_with(model: script_extension, local: true) do |form| %>
-  <% if script_extension.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(script_extension.errors.count, "error") %> prohibited this script_extension from being saved:</h2>
 
-      <ul>
-        <% script_extension.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<!-- PHCNotifi Render Validation -->
+	<%= render 'phcnotifi/default/validations', :object => @script_extension %>
+	<!-- PHCNotifi Render Validation -->
 
-  <div class="field">
-    <%= form.label :script_extension_name %>
-    <%= form.text_field :script_extension_name %>
-  </div>
+	<!-- Form Input Fields -->
+	<div class="form-group field_with_errors">
+		<%= form.label :script_extension_name, "Extension Name" %>
+		<%= form.text_field :script_extension_name, placeholder: "Extension Name", class: "form-control" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :script_extension_description, "Extension Description" %>
+		<%= form.text_area :script_extension_description, placeholder: "Extension Description", class: "form-control" %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :script_extension, "Script Extension" %>
+		<%= form.text_field :script_extension, placeholder: "Script Extension (.js/.css)", class: "form-control" %>
+	</div>
+	<!-- Form Input Fields -->
 
-  <div class="field">
-    <%= form.label :script_extension_description %>
-    <%= form.text_field :script_extension_description %>
-  </div>
+	<!-- Form Submition Button -->
+	<div class="actions">
+		<%= form.submit class: "btn btn-primary" %>
+	</div>
+	<!-- For Submition Button -->
 
-  <div class="field">
-    <%= form.label :script_extension %>
-    <%= form.text_field :script_extension %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

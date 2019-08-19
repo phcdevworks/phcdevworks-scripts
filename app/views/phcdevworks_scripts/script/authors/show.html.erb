@@ -1,24 +1,49 @@
-<p id="notice"><%= notice %></p>
+<!-- Title System -->
+<% phc_title "Script Authors" %>
+<% phc_title_tagline "Script Author Profile" %>
+<% phc_breadcrumb_one link_to "Script Index", phcscriptcdn.script_listings_path %>
+<% phc_breadcrumb_two link_to "Author Index", phcscriptcdn.script_authors_path %>
+<% phc_breadcrumb_three yield(:phc_title_tagline) %>
+<!-- Title System -->
 
-<p>
-  <strong>Author first name:</strong>
-  <%= @script_author.author_first_name %>
-</p>
+<!-- Page Bradcrumbs -->
+<ol class="breadcrumb pull-right">
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_two) %></li>
+	<li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_three) %></li>
+</ol>
+<!-- Page Bradcrumbs -->
 
-<p>
-  <strong>Author last name:</strong>
-  <%= @script_author.author_last_name %>
-</p>
+<!-- Page Header -->
+<h1 class="page-header"><%= yield(:phc_title) %></h1>
+<!-- Page Header -->
 
-<p>
-  <strong>Author website:</strong>
-  <%= @script_author.author_website %>
-</p>
+<!-- Page Content -->
+<div class="row">
 
-<p>
-  <strong>Author github:</strong>
-  <%= @script_author.author_github %>
-</p>
+	<!-- Button Panel -->
+	<div class="col-lg-4">
 
-<%= link_to 'Edit', edit_script_author_path(@script_author) %> |
-<%= link_to 'Back', script_authors_path %>
+		<div class="panel panel-inverse">
+			<div class="panel-heading">
+				<div class="panel-heading-btn">
+				</div>
+			</div>
+			<div class="panel-body">
+				<div class="btn-group d-flex" role="group">
+					<%= link_to 'Update', phcscriptcdn.edit_script_author_path, class: "btn btn-primary" %>
+					<%= link_to 'Remove', phcscriptcdn.script_author_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- Button Panel -->
+
+	<!-- Main Panel -->
+	<div class="col-lg-8">
+	</div>
+	<!-- Main Panel -->
+
+</div>
+<!-- Page Content -->

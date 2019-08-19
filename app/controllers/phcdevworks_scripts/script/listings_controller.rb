@@ -2,6 +2,11 @@ require_dependency "phcdevworks_scripts/application_controller"
 
 module PhcdevworksScripts
   class Script::ListingsController < ApplicationController
+
+    # Filters & Security
+    #include PhcdevworksCore::PhcpluginsHelper
+    #before_action :authenticate_user!
+    before_action :set_paper_trail_whodunnit
     before_action :set_script_listing, only: [:show, :edit, :update, :destroy]
 
     # GET /script/listings
@@ -11,6 +16,8 @@ module PhcdevworksScripts
 
     # GET /script/listings/1
     def show
+      @script_listings = Script::Listing.friendly.find(params[:id])
+      @versions = PhcdevworksScripts::ListingVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script_::Listing')
     end
 
     # GET /script/listings/new
@@ -25,38 +32,50 @@ module PhcdevworksScripts
     # POST /script/listings
     def create
       @script_listing = Script::Listing.new(script_listing_params)
-
-      if @script_listing.save
-        redirect_to @script_listing, notice: 'Listing was successfully created.'
-      else
-        render :new
+      respond_to do |format|
+        if @script_listing.save
+          format.html { redirect_to script_listings_path, :flash => { :success => 'Script Listing has been Added.' }}
+          format.json { render :show, status: :created, location: @script_listing }
+        else
+          format.html { render :new }
+          format.json { render json: @script_listing.errors, status: :unprocessable_entity }
+        end
       end
     end
 
     # PATCH/PUT /script/listings/1
     def update
-      if @script_listing.update(script_listing_params)
-        redirect_to @script_listing, notice: 'Listing was successfully updated.'
-      else
-        render :edit
+      respond_to do |format|
+        if @script_listing.update(script_listing_params)
+          format.html { redirect_to script_listings_path, :flash => { :notice => 'Script Listing has been Updated.' }}
+          format.json { render :show, status: :ok, location: @script_listing }
+        else
+          format.html { render :edit }
+          format.json { render json: @script_listing.errors, status: :unprocessable_entity }
+        end
       end
     end
 
     # DELETE /script/listings/1
     def destroy
       @script_listing.destroy
-      redirect_to script_listings_url, notice: 'Listing was successfully destroyed.'
+      respond_to do |format|
+        format.html { redirect_to script_listings_path, :flash => { :error => 'Script Listing and Connections have all been Removed.' }}
+        format.json { head :no_content }
+      end
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_script_listing
-        @script_listing = Script::Listing.find(params[:id])
-      end
 
-      # Only allow a trusted parameter "white list" through.
-      def script_listing_params
-        params.require(:script_listing).permit(:listing_title, :listing_description, :listing_script_source, :listing_script_website, :listing_script_repo, :listing_script_initial_release, :listing_script_lastest_release, :listing_script_beta_release, :listing_script_lastest_release_cdn, :listing_script_status)
-      end
+    # Callback
+    def set_script_listing
+      @script_listing = Script::Listing.find(params[:id])
+    end
+
+    # Whitelist
+    def script_listing_params
+      params.require(:script_listing).permit(:listing_title, :listing_description, :listing_script_source, :listing_script_website, :listing_script_repo, :listing_script_initial_release, :listing_script_lastest_release, :listing_script_beta_release, :listing_script_lastest_release_cdn, :listing_script_status)
+    end
+
   end
 end

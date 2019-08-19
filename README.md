@@ -1,6 +1,6 @@
 ### PHCDevworks Scripts Documentation  
 
-PHCDevworks Scripts rails script management engine for website script listings.  
+PHCDevworks Scripts Rails 6 script management engine for website script CDN and snippet listings
 
 - Manage script CDN listings for websites.
 - Main script title and description.
