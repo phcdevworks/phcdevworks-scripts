@@ -5,7 +5,7 @@ module PhcdevworksScripts
 
     # Filters & Security
     #include PhcdevworksCore::PhcpluginsHelper
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_script_listing, only: [:show, :edit, :update, :destroy]
 
@@ -32,6 +32,7 @@ module PhcdevworksScripts
     # POST /script/listings
     def create
       @script_listing = Script::Listing.new(script_listing_params)
+      @script_listing.user_id = current_user.id
       respond_to do |format|
         if @script_listing.save
           format.html { redirect_to script_listings_path, :flash => { :success => 'Script Listing has been Added.' }}

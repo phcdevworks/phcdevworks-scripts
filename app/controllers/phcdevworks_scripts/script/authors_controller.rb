@@ -5,7 +5,7 @@ module PhcdevworksScripts
 
     # Filters & Security
     #include PhcdevworksCore::PhcpluginsHelper
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_script_author, only: [:show, :edit, :update, :destroy]
 
@@ -32,6 +32,7 @@ module PhcdevworksScripts
     # POST /script/authors
     def create
       @script_author = Script::Author.new(script_author_params)
+      @script_author.user_id = current_user.id
       respond_to do |format|
         if @script_author.save
           format.html { redirect_to script_authors_path, :flash => { :success => 'Author has been Added.' }}

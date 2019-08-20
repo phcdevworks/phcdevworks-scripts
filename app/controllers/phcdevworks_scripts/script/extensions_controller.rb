@@ -5,7 +5,7 @@ module PhcdevworksScripts
 
     # Filters & Security
     #include PhcdevworksCore::PhcpluginsHelper
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_script_extension, only: [:show, :edit, :update, :destroy]
 
@@ -32,6 +32,7 @@ module PhcdevworksScripts
     # POST /script/extensions
     def create
       @script_extension = Script::Extension.new(script_extension_params)
+      @script_extension.user_id = current_user.id
       respond_to do |format|
         if @script_extension.save
           format.html { redirect_to script_extensions_path, :flash => { :success => 'Script Extension has been Added.' }}

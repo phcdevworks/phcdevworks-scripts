@@ -30,6 +30,7 @@ module PhcdevworksScripts
     # POST /snippet/posts
     def create
       @snippet_post = Snippet::Post.new(snippet_post_params)
+      @script_version.user_id = current_user.id
       respond_to do |format|
         if @snippet_post.save
           format.html { redirect_to snippet_posts_path, :flash => { :success => 'Script Snippet has been Added.' }}

@@ -5,7 +5,7 @@ module PhcdevworksScripts
 
     # Filters & Security
     #include PhcdevworksCore::PhcpluginsHelper
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_script_version, only: [:show, :edit, :update, :destroy]
 
@@ -32,6 +32,7 @@ module PhcdevworksScripts
     # POST /script/versions
     def create
       @script_version = Script::Version.new(script_version_params)
+      @script_version.user_id = current_user.id
       respond_to do |format|
         if @script_version.save
           format.html { redirect_to script_versions_path, :flash => { :success => 'Script Version has been Added.' }}
