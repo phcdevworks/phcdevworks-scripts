@@ -1,27 +1,26 @@
-<%= form_with(model: snippet_post, local: true) do |form| %>
-  <% if snippet_post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(snippet_post.errors.count, "error") %> prohibited this snippet_post from being saved:</h2>
+<!-- Form - Script - Snippets -->
+<%= form_with(model: script_snippet, local: true) do |form| %>
 
-      <ul>
-        <% snippet_post.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+	<!-- PHCNotifi Render Validation -->
+	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @article_post %>
+	<!-- PHCNotifi Render Validation -->
 
-  <div class="field">
-    <%= form.label :snippet_title %>
-    <%= form.text_field :snippet_title %>
-  </div>
+	<!-- Form Input Fields -->
+	<div class="form-group field_with_errors">
+		<%= form.label :snippet_title, "Snippet Title" %>
+		<%= form.text_field :snippet_title, class: 'form-control', placeholder: 'Snippet Title' %>
+	</div>
+	<div class="form-group field_with_errors">
+		<%= form.label :snippet_code, "Code Snippet" %>
+		<%= form.text_area :snippet_code, class: 'form-control', placeholder: 'Code Snippet', rows: '10' %>
+	</div>
+	<!-- Form Input Fields -->
 
-  <div class="field">
-    <%= form.label :snippet_code %>
-    <%= form.text_area :snippet_code %>
-  </div>
+	<!-- Form Submition Button -->
+	<div class="actions">
+		<%= form.submit class: "btn btn-primary" %>
+	</div>
+	<!-- For Submition Button -->
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+<!-- Form - Script - Snippets -->

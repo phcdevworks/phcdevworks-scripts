@@ -69,7 +69,7 @@ module PhcdevworksScripts
 
     # Callback
     def set_script_extension
-      @script_extension = Script::Extension.find(params[:id])
+      @script_extension = Script::Extension.friendly.find(params[:id])
     end
 
     # Whitelist

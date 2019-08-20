@@ -9,65 +9,67 @@ module PhcdevworksScripts
     before_action :set_paper_trail_whodunnit
     before_action :set_snippet_url, only: [:show, :edit, :update, :destroy]
 
-    # GET /snippet/urls
+    # INDEX
     def index
-      @snippet_urls = Snippet::Url.all
+      snippet = Script::Snippet.find(params[:snippet_id])
+      @script_urls = snippet.urls.all
     end
 
-    # GET /snippet/urls/1
+    # SHOW
     def show
+      script_snippet = Script::Snippet.find(params[:snippet_id])
+      @script_url = script_snippet.urls.find(params[:id])
     end
 
-    # GET /snippet/urls/new
+    # NEW
     def new
-    @snippet_url = Snippet::Url.new
+      script_snippet = Script::Snippet.find(params[:snippet_id])
+      @script_url = script_snippet.urls.build
     end
 
-    # GET /snippet/urls/1/edit
+    # EDIT
     def edit
     end
 
-    # POST /snippet/urls
+    # CREATE
     def create
-      @snippet_url = Snippet::Url.new(snippet_url_params)
-      respond_to do |format|
-        if @snippet_url.save
-          format.html { redirect_to snippet_urls_path, :flash => { :success => 'Script Snippet CDN URL has been Added.' }}
-          format.json { render :show, status: :created, location: @snippet_url }
-        else
-          format.html { render :new }
-          format.json { render json: @snippet_url.errors, status: :unprocessable_entity }
-        end
+      @script_snippet = Script::Snippet.find(params[:snippet_id])
+      @script_url = @script_snippet.urls.create(script_url_params)
+      @script_url.user_id = current_user.id
+      if @script_url.save
+        redirect_to script_snippet_urls_path, :flash => { :success => 'Script url was successfully created.' }
+      else
+        render :new
       end
     end
 
-    # PATCH/PUT /snippet/urls/1
+    # UPDATE
     def update
-      respond_to do |format|
-        if @snippet_url.update(snippet_url_params)
-          format.html { redirect_to snippet_urls_path, :flash => { :notice => 'Script Snippet CDN URL Name has been Updated.' }}
-          format.json { render :show, status: :ok, location: @snippet_url }
-        else
-          format.html { render :edit }
-          format.json { render json: @snippet_url.errors, status: :unprocessable_entity }
-        end
+      @script_snippet = Script::Snippet.find(params[:snippet_id])
+      if @script_url.update(script_url_params)
+        redirect_to script_snippet_urls_path, :flash => { :success => 'Script url was successfully updated.' }
+      else
+        render :edit
       end
     end
 
-    # DELETE /snippet/urls/1
+    # DELETE
     def destroy
-      @snippet_url.destroy
-      respond_to do |format|
-        format.html { redirect_to snippet_urls_path, :flash => { :error => 'Script Snippet CDN URL and Connections have all been Removed.' }}
-        format.json { head :no_content }
-      end
+      @script_snippet = Script::Snippet.find(params[:snippet_id])
+      @script_url = @script_snippet.urls.find(params[:id])
+      @script_url.destroy
+      redirect_to script_snippet_urls_path, :flash => { :error => 'Script url was successfully destroyed.' }
     end
 
     private
 
     # Common Callbacks
     def set_snippet_url
-      @snippet_url = Snippet::Url.find(params[:id])
+      @snippet_url = Snippet::Url.friendly.find(params[:id])
+    end
+
+    def snippet_post
+      @snippet_post = Snippet::Posts.friendly.find(params[:post_id])
     end
 
     # Whitelist

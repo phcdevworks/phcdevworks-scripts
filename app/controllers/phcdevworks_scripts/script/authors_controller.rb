@@ -69,7 +69,7 @@ module PhcdevworksScripts
 
     # Callback
     def set_script_author
-      @script_author = Script::Author.find(params[:id])
+      @script_author = Script::Author.friendly.find(params[:id])
     end
 
     # Whitelist

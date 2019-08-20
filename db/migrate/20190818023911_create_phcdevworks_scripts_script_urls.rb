@@ -6,6 +6,10 @@ class CreatePhcdevworksScriptsScriptUrls < ActiveRecord::Migration[6.0]
       t.date :script_cdn_url_release
       t.date :script_cdn_url_cdn_update
 
+      t.references :listing
+      t.references :extension
+      t.references :version
+
       t.string :slug
       t.string :user_id
       t.string :org_id

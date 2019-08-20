@@ -9,60 +9,57 @@ module PhcdevworksScripts
     before_action :set_paper_trail_whodunnit
     before_action :set_script_url, only: [:show, :edit, :update, :destroy]
 
-    # GET /script/urls
+    # INDEX
     def index
-      @script_urls = Script::Url.all
+      script_listing = Script::Listing.find(params[:listing_id])
+      @script_urls = script_listing.urls
     end
 
-    # GET /script/urls/1
+    # SHOW
     def show
       script_listing = Script::Listing.find(params[:listing_id])
       @script_url = script_listing.urls.friendly.find(params[:id])
     end
 
-    # GET /script/urls/new
+    # NEW
     def new
-      @script_url = Script::Url.new
+      script_listing = Script::Listing.find(params[:listing_id])
+      @script_url = script_listing.urls.build
     end
 
-    # GET /script/urls/1/edit
+    # EDIT
     def edit
+      script_listing = Script::Listing.find(params[:listing_id])
+      @script_url = script_listing.urls.find(params[:id])
     end
 
-    # POST /script/urls
+    # CREATE
     def create
-      @script_url = Script::Url.new(script_url_params)
-      respond_to do |format|
-        if @script_url.save
-          format.html { redirect_to script_listing_urls_path, :flash => { :success => 'Script CDN URLs has been Added.' }}
-          format.json { render :show, status: :created, location: @script_url }
-        else
-          format.html { render :new }
-          format.json { render json: @script_url.errors, status: :unprocessable_entity }
-        end
+      @script_listing = Script::Listing.find(params[:listing_id])
+      @script_url = @script_listing.urls.create(script_url_params)
+      @script_url.user_id = current_user.id
+      if @script_url.save
+        redirect_to script_listing_urls_path, :flash => { :success => 'Author was successfully created.' }
+      else
+        render :new
       end
     end
 
-    # PATCH/PUT /script/urls/1
+    # UPDATE
     def update
-      respond_to do |format|
-        if @script_url.update(script_url_params)
-          format.html { redirect_to script_listing_urls_path, :flash => { :notice => 'Script CDN URLs Name has been Updated.' }}
-          format.json { render :show, status: :ok, location: @script_url }
-        else
-          format.html { render :edit }
-          format.json { render json: @script_url.errors, status: :unprocessable_entity }
-        end
+      if @script_url.update(script_url_params)
+        redirect_to script_listing_urls_path, :flash => { :success => 'Author was successfully updated.' }
+      else
+        render :edit
       end
     end
 
-    # DELETE /script/urls/1
+    # DELETE
     def destroy
+      @script_listing = Script::Listing.find(params[:listing_id])
+      @script_url = @script_listing.urls.find(params[:id])
       @script_url.destroy
-      respond_to do |format|
-        format.html { redirect_to script_listing_urls_path, :flash => { :error => 'Script CDN URLs and Connections have all been Removed.' }}
-        format.json { head :no_content }
-      end
+      redirect_to script_listing_urls_path, :flash => { :error => 'Author was successfully destroyed.' }
     end
 
     private
@@ -70,6 +67,10 @@ module PhcdevworksScripts
     # Callback
     def set_script_url
       @script_url = Script::Url.find(params[:id])
+    end
+
+    def script_listing
+      @script_listing = Script::Listing.friendly.find(params[:listing_id])
     end
 
     # Whitelist

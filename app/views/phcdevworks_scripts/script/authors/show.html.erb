@@ -1,8 +1,8 @@
 <!-- Title System -->
 <% phc_title "Script Authors" %>
 <% phc_title_tagline "Script Author Profile" %>
-<% phc_breadcrumb_one link_to "Script Index", phcscriptcdn.script_listings_path %>
-<% phc_breadcrumb_two link_to "Author Index", phcscriptcdn.script_authors_path %>
+<% phc_breadcrumb_one link_to "Script Index", phcdevworks_scripts.script_listings_path %>
+<% phc_breadcrumb_two link_to "Author Index", phcdevworks_scripts.script_authors_path %>
 <% phc_breadcrumb_three yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -31,8 +31,8 @@
 			</div>
 			<div class="panel-body">
 				<div class="btn-group d-flex" role="group">
-					<%= link_to 'Update', phcscriptcdn.edit_script_author_path, class: "btn btn-primary" %>
-					<%= link_to 'Remove', phcscriptcdn.script_author_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+					<%= link_to 'Update', phcdevworks_scripts.edit_script_author_path, class: "btn btn-primary" %>
+					<%= link_to 'Remove', phcdevworks_scripts.script_author_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 				</div>
 			</div>
 		</div>

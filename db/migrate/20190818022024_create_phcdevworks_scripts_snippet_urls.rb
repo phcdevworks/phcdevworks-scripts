@@ -4,6 +4,8 @@ class CreatePhcdevworksScriptsSnippetUrls < ActiveRecord::Migration[6.0]
 
       t.string :snippet_url
 
+      t.references :snippet
+
       t.string :slug
       t.string :user_id
       t.string :org_id

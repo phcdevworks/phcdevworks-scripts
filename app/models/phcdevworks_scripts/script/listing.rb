@@ -10,7 +10,6 @@ module PhcdevworksScripts
     # Relationships
     has_many :urls, class_name: 'PhcdevworksScripts::Script::Url', :dependent => :destroy
     belongs_to :author, class_name: 'PhcdevworksScripts::Script::Author'
-    belongs_to :licence, class_name: 'PhcdevworksScripts::Script::Licence'
 
     # Form Fields Validation
     validates :listing_title,
