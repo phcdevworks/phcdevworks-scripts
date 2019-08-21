@@ -21,8 +21,8 @@ PhcdevworksScripts::Engine.routes.draw do
 
   # Script Snippet Routes
   namespace :snippet do
-    resources :posts, class_name: 'PhcdevworksScripts::Script::Snippet' do
-      resources :urls, class_name: 'PhcdevworksScripts::Script::Url'
+    resources :posts, class_name: 'PhcdevworksScripts::Snippet::Post' do
+      resources :urls, class_name: 'PhcdevworksScripts::Snippet::Url'
     end
   end
 

@@ -1,7 +1,7 @@
 <!-- Title System -->
 <% phc_title "Code Snippet Manager" %>
 <% phc_title_tagline "Update Asset URL" %>
-<% phc_breadcrumb_one link_to "Code Snippet Index", phccodesnipper.script_snippets_path %>
+<% phc_breadcrumb_one link_to "Code Snippet Index", phcdevworks_scripts.snippet_posts_path %>
 <% phc_breadcrumb_two yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -31,7 +31,7 @@
 	<!-- Panel Body -->
 	<div class="panel-body">
 		<!-- Form to Edit Script Snippet Asset URLS  -->
-		<%= render 'form', { form_url: script_snippet_url_path } %>
+		<%= render 'form', { form_url: snippet_post_url_path } %>
 		<!-- Form to Edit Script Snippet Asset URLS  -->
 	</div>
 	<!-- Panel Body -->

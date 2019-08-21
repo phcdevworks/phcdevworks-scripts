@@ -1,7 +1,7 @@
 <!-- Title System -->
 <% phc_title "Code Snippet Manager" %>
 <% phc_title_tagline "Asset URL Details" %>
-<% phc_breadcrumb_one link_to "Code Snippet Index", phccodesnipper.script_snippets_path %>
+<% phc_breadcrumb_one link_to "Code Snippet Index", phcdevworks_scripts.snippet_posts_path %>
 <% phc_breadcrumb_two yield(:phc_title_tagline) %>
 <!-- Title System -->
 
@@ -31,8 +31,8 @@
       <!-- Panel Body -->
       <div class="panel-body">
         <div class="btn-group d-flex" role="group">
-          <%= link_to 'Update', phccodesnipper.edit_script_snippet_url_path, class: "btn btn-primary" %>
-          <%= link_to 'Remove', phccodesnipper.script_snippet_urls_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+          <%= link_to 'Update', phcdevworks_scripts.edit_snippet_post_url_path, class: "btn btn-primary" %>
+          <%= link_to 'Remove', phcdevworks_scripts.snippet_post_urls_path, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
         </div>
       </div>
       <!-- Panel Body -->

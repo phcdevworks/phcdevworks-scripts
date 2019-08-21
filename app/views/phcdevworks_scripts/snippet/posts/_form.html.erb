@@ -1,8 +1,8 @@
 <!-- Form - Script - Snippets -->
-<%= form_with(model: script_snippet, local: true) do |form| %>
+<%= form_with(model: @snippet_post, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @article_post %>
+	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @snippet_post %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- Form Input Fields -->

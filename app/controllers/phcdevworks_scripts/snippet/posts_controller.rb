@@ -5,7 +5,7 @@ module PhcdevworksScripts
 
     # Filters & Security
     #include PhcdevworksCore::PhcpluginsHelper
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_snippet_post, only: [:show, :edit, :update, :destroy]
 
@@ -30,7 +30,7 @@ module PhcdevworksScripts
     # POST /snippet/posts
     def create
       @snippet_post = Snippet::Post.new(snippet_post_params)
-      @script_version.user_id = current_user.id
+      @snippet_post.user_id = current_user.id
       respond_to do |format|
         if @snippet_post.save
           format.html { redirect_to snippet_posts_path, :flash => { :success => 'Script Snippet has been Added.' }}
@@ -68,7 +68,7 @@ module PhcdevworksScripts
 
     # Common Callbacks
     def set_snippet_post
-      @snippet_post = Snippet::Post.find(params[:id])
+      @snippet_post = Snippet::Post.friendly.find(params[:id])
     end
 
     # Whitelist

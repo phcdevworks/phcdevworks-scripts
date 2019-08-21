@@ -1,9 +1,6 @@
 module PhcdevworksScripts
   class Snippet::Post < ApplicationRecord
 
-    # Include Core Validations
-    include Phccorehelpers::Validations
-
     # Clean URL Initialize
     extend FriendlyId
 

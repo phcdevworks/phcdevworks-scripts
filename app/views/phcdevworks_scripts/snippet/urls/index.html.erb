@@ -2,7 +2,7 @@
 <% phc_title "Code Snippet Manager" %>
 <% phc_title_tagline "Update Asset Index" %>
 <% phc_breadcrumb_one yield(:phc_title_tagline) %>
-<% phc_breadcrumb_two link_to "Code Snippet Index", phccodesnipper.script_snippets_path %>
+<% phc_breadcrumb_two link_to "Code Snippet Index", phcdevworks_scripts.snippet_posts_path %>
 <!-- Title System -->
 
 <!-- Page Bradcrumbs -->
@@ -45,16 +45,16 @@
               <td><%= script_url.script_url %></td>
               <td>
                 <div class="btn-group d-flex" role="group">
-                  <%= link_to 'Details', script_snippet_url_path(script_url.snippet, script_url), class: "btn btn-purple btn-xs" %>
-                  <%= link_to 'Update', edit_script_snippet_url_path(script_url.snippet, script_url), class: "btn btn-primary btn-xs" %>
-                  <%= link_to 'Remove', script_snippet_url_path(script_url.snippet, script_url), method: :delete, data: { confirm: 'Are you sure? This action cannot be reversed.' }, class: "btn btn-danger btn-xs" %>
+                  <%= link_to 'Details', snippet_post_url_path(script_url.snippet, script_url), class: "btn btn-purple btn-xs" %>
+                  <%= link_to 'Update', edit_snippet_post_url_path(script_url.snippet, script_url), class: "btn btn-primary btn-xs" %>
+                  <%= link_to 'Remove', snippet_post_url_path(script_url.snippet, script_url), method: :delete, data: { confirm: 'Are you sure? This action cannot be reversed.' }, class: "btn btn-danger btn-xs" %>
                 </div>
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      <%= link_to phccodesnipper.new_script_snippet_url_path, class: "btn btn-primary btn-sm" do %>
+      <%= link_to phcdevworks_scripts.new_snippet_post_url_path, class: "btn btn-primary btn-sm" do %>
         <i class="fas fa-plus-circle"></i>
         Add a New Script URL
       <% end %>

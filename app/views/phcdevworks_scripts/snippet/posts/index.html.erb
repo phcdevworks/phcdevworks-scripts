@@ -2,7 +2,7 @@
 <% phc_title "Code Snippet Manager" %>
 <% phc_title_tagline "Code Snippet Index" %>
 <% phc_breadcrumb_one yield(:phc_title_tagline) %>
-<% phc_breadcrumb_two link_to "Code Snippet Index", phccodesnipper.script_snippets_path %>
+<% phc_breadcrumb_two link_to "Code Snippet Index", phcdevworks_scripts.snippet_posts_path %>
 <!-- Title System -->
 
 <!-- Page Bradcrumbs -->
@@ -41,22 +41,22 @@
           </tr>
         </thead>
         <tbody>
-          <% @script_snippets.each do |script_snippet| %>
+          <% @snippet_posts.each do |snippet_post| %>
             <tr>
-              <td><%= script_snippet.snippet_title %></td>
-              <td><%= truncate(script_snippet.snippet_code, :length => 80) %></td>
+              <td><%= snippet_post.snippet_title %></td>
+              <td><%= truncate(snippet_post.snippet_code, :length => 80) %></td>
               <td>
                 <div class="btn-group d-flex" role="group">
-                  <%= link_to 'Details', script_snippet, class: "btn btn-purple btn-xs" %>
-                  <%= link_to 'Update', edit_script_snippet_path(script_snippet), class: "btn btn-primary btn-xs" %>
-                  <%= link_to 'Remmove', script_snippet, method: :delete, data: { confirm: 'Are you sure? This will aslo delte the snippet urls.' }, class: "btn btn-danger btn-xs" %>
+                  <%= link_to 'Details', snippet_post, class: "btn btn-purple btn-xs" %>
+                  <%= link_to 'Update', edit_snippet_post_path(snippet_post), class: "btn btn-primary btn-xs" %>
+                  <%= link_to 'Remmove', snippet_post, method: :delete, data: { confirm: 'Are you sure? This will aslo delte the snippet urls.' }, class: "btn btn-danger btn-xs" %>
                 </div>
               </td>
             </tr>
           <% end %>
         </tbody>
       </table>
-      <%= link_to phccodesnipper.new_script_snippet_path, class: "btn btn-primary btn-sm" do %>
+      <%= link_to phcdevworks_scripts.new_snippet_post_path, class: "btn btn-primary btn-sm" do %>
         <i class="fas fa-plus-circle"></i>
         Add a New Code Snippet
       <% end %>
