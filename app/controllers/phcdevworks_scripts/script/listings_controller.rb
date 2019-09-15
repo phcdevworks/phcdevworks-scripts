@@ -33,6 +33,7 @@ module PhcdevworksScripts
     def create
       @script_listing = Script::Listing.new(script_listing_params)
       @script_listing.user_id = current_user.id
+      @script_listing.org_id = current_user.org_id
       respond_to do |format|
         if @script_listing.save
           format.html { redirect_to script_listings_path, :flash => { :success => 'Script Listing has been Added.' }}

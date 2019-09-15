@@ -33,6 +33,7 @@ module PhcdevworksScripts
     def create
       @script_author = Script::Author.new(script_author_params)
       @script_author.user_id = current_user.id
+      @script_author.org_id = current_user.org_id
       respond_to do |format|
         if @script_author.save
           format.html { redirect_to script_authors_path, :flash => { :success => 'Author has been Added.' }}

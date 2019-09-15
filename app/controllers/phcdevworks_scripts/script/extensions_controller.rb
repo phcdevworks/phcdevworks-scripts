@@ -33,6 +33,7 @@ module PhcdevworksScripts
     def create
       @script_extension = Script::Extension.new(script_extension_params)
       @script_extension.user_id = current_user.id
+      @script_extension.org_id = current_user.org_id
       respond_to do |format|
         if @script_extension.save
           format.html { redirect_to script_extensions_path, :flash => { :success => 'Script Extension has been Added.' }}

@@ -33,6 +33,7 @@ module PhcdevworksScripts
     def create
       @script_version = Script::Version.new(script_version_params)
       @script_version.user_id = current_user.id
+      @script_version.org_id = current_user.org_id
       respond_to do |format|
         if @script_version.save
           format.html { redirect_to script_versions_path, :flash => { :success => 'Script Version has been Added.' }}

@@ -32,6 +32,7 @@ module PhcdevworksScripts
     def create
       @script_url = snippet_post.urls.create(script_url_params)
       @script_url.user_id = current_user.id
+      @script_url.org_id = current_user.org_id
       if @script_url.save
         redirect_to script_snippet_urls_path, :flash => { :success => 'Script url was successfully created.' }
       else
