@@ -16,6 +16,7 @@ module PhcdevworksScripts
 
     # GET /snippet/posts/1
     def show
+      @snippet_post = Snippet::Post.friendly.find(params[:id])
     end
 
     # GET /snippet/posts/new

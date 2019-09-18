@@ -61,7 +61,7 @@ module PhcdevworksScripts
 
     # Common Callbacks
     def set_snippet_url
-      @snippet_url = Snippet::Url.friendly.find(params[:id])
+      @snippet_url = Snippet::Url.find(params[:id])
     end
 
     def snippet_post
