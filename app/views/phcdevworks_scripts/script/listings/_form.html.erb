@@ -1,7 +1,7 @@
 <%= form_with(model: script_listing, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @script_listing %>
+	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @script_listing %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- Form Input Fields -->
@@ -45,11 +45,11 @@
 	</div>
 	<div class="form-group field_with_errorss">
 		<label>Script Author</label>
-		<%= collection_select(:script_listing, :author_id, PhcdevworksScripts::Script::Author.order('author_first_name'), :id, :author_first_name, {}, {class: "form-control"}) %>
+		<%= collection_select(:script_listing, :author_id, PhcdevworksScripts::Script::Author.order("author_first_name"), :id, :author_first_name, {}, {class: "form-control"}) %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= form.label :listing_script_status, "Script Status" %>
-		<%= form.select( :listing_script_status, [['Active','Active'],['Outdated','Out Dated'],['Deactivated','Not Active']], {}, {class: "form-control"}) %>
+		<%= form.select( :listing_script_status, [["Active","Active"],["Outdated","Out Dated"],["Deactivated","Not Active"]], {}, {class: "form-control"}) %>
 	</div>
 	<!-- Form Input Fields -->
 

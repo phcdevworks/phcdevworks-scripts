@@ -23,10 +23,12 @@ module PhcdevworksScripts
       format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
 
     # Clean URL Define
-    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
+    friendly_id :phcdev_script_author_nice_urls, use: [:slugged, :finders]
 
-    def phc_nice_url_slug
-      [:author_first_name, :author_last_name]
+    def phcdev_script_author_nice_urls
+      [
+        [:author_first_name, :author_last_name]
+      ]
     end
 
   end

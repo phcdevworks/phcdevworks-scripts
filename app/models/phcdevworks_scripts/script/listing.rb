@@ -28,9 +28,9 @@ module PhcdevworksScripts
       format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
 
     # Clean URL Define
-    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
+    friendly_id :phcdev_script_listing_nice_urls, use: [:slugged, :finders]
 
-    def phc_nice_url_slug
+    def phcdev_script_listing_nice_urls
       [:listing_title]
     end
 

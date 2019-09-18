@@ -2,17 +2,17 @@
 <%= form_with(model: @snippet_post, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @snippet_post %>
+	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @snippet_post %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
 		<%= form.label :snippet_title, "Snippet Title" %>
-		<%= form.text_field :snippet_title, class: 'form-control', placeholder: 'Snippet Title' %>
+		<%= form.text_field :snippet_title, placeholder: "Snippet Title", class: "form-control" %>
 	</div>
 	<div class="form-group field_with_errors">
 		<%= form.label :snippet_code, "Code Snippet" %>
-		<%= form.text_area :snippet_code, class: 'form-control', placeholder: 'Code Snippet', rows: '10' %>
+		<%= form.text_area :snippet_code, placeholder: "Code Snippet", rows: "10", class: "form-control" %>
 	</div>
 	<!-- Form Input Fields -->
 

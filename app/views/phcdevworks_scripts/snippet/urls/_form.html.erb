@@ -2,13 +2,13 @@
 <%= form_with(model: [ @script_snippet, @script_url], url: form_url, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @article_post %>
+	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @article_post %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
 		<%= form.label :script_url %>
-		<%= form.text_field :script_url, class: 'form-control', placeholder: 'Script Url'  %>
+		<%= form.text_field :script_url, placeholder: "Script Url", class: "form-control" %>
 	</div>
 	<!-- Form Input Fields -->
 

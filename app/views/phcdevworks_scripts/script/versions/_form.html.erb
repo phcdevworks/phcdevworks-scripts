@@ -1,13 +1,13 @@
 <%= form_with(model: script_version, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @script_version %>
+	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @script_version %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
 		<%= form.label :script_version_number, "Version Number" %>
-		<%= form.text_field :script_version_number, placeholder: "Version Number", class: "form-control"  %>
+		<%= form.text_field :script_version_number, placeholder: "Version Number", class: "form-control" %>
 	</div>
 	<!-- Form Input Fields -->
 

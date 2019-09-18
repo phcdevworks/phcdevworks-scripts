@@ -22,9 +22,9 @@ module PhcdevworksScripts
       presence: true
     
     # Clean URL Define
-    friendly_id :phc_nice_url_slug, use: [:slugged, :finders]
+    friendly_id :phcdev_script_extension_nice_urls, use: [:slugged, :finders]
 
-    def phc_nice_url_slug
+    def phcdev_script_extension_nice_urls
       [:script_extension]
     end
 
