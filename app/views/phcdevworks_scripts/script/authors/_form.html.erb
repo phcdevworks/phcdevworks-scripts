@@ -1,7 +1,8 @@
+<!-- Form - Script - Authors -->
 <%= form_with(model: script_author, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render 'phcdevworks_notifications/bootstrap/validations', :object => @script_author %>
+	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @script_author %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- Form Input Fields -->
@@ -25,7 +26,7 @@
 		<%= form.text_field :author_github, placeholder: "Author Github Address", class: "form-control"  %>
 	</div>
 	<!-- Form Input Fields -->
-	
+
 	<!-- Form Submition Button -->
 	<div class="actions">
 		<%= form.submit class: "btn btn-primary" %>
@@ -33,3 +34,4 @@
 	<!-- For Submition Button -->
 
 <% end %>
+<!-- Form - Script - Authors -->

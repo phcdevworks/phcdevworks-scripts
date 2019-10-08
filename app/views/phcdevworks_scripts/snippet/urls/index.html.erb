@@ -1,66 +1,80 @@
-<!-- Title System -->
+<!-- PHCTitleSEO Title Variables -->
 <% phc_title "Code Snippet Manager" %>
 <% phc_title_tagline "Update Asset Index" %>
 <% phc_breadcrumb_one yield(:phc_title_tagline) %>
 <% phc_breadcrumb_two link_to "Code Snippet Index", phcdevworks_scripts.snippet_posts_path %>
-<!-- Title System -->
+<!-- PHCTitleSEO Title Variables -->
 
 <!-- Page Bradcrumbs -->
 <ol class="breadcrumb pull-right">
-  <li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
-  <li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
+	<li class="breadcrumb-item"><%= yield(:phc_breadcrumb_one) %></li>
+	<li class="breadcrumb-item active"><%= yield(:phc_breadcrumb_two) %></li>
 </ol>
 <!-- Page Bradcrumbs -->
 
 <!-- Page Header -->
-<h1 class="page-header"><%= yield(:phc_title) %></h1>
+<h2 class="page-header"><%= yield(:phc_title) %></h2>
 <!-- Page Header -->
 
-<!-- Page & Panel Content -->
-<div class="panel panel-inverse">
-  <!-- Panel Heading -->
-  <div class="panel-heading">
-    <div class="panel-heading-btn">
-      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
-      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-redo"></i></a>
-      <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
-    </div>
-    <h4 class="panel-title"><%= yield(:phc_title_tagline) %></h4>
-  </div>
-  <!-- Panel Heading -->
-  <!-- Panel Body -->
-  <div class="panel-body">
-    <!-- Table - Snippet Index -->
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>Script Url</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @script_urls.each do |script_url| %>
-            <tr>
-              <td><%= script_url.script_url %></td>
-              <td>
-                <div class="btn-group d-flex" role="group">
-                  <%= link_to 'Details', snippet_post_url_path(script_url.snippet, script_url), class: "btn btn-purple btn-xs" %>
-                  <%= link_to 'Update', edit_snippet_post_url_path(script_url.snippet, script_url), class: "btn btn-primary btn-xs" %>
-                  <%= link_to 'Remove', snippet_post_url_path(script_url.snippet, script_url), method: :delete, data: { confirm: 'Are you sure? This action cannot be reversed.' }, class: "btn btn-danger btn-xs" %>
-                </div>
-              </td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-      <%= link_to phcdevworks_scripts.new_snippet_post_url_path, class: "btn btn-primary btn-sm" do %>
-        <i class="fas fa-plus-circle"></i>
-        Add a New Script URL
-      <% end %>
-    </div>
-    <!-- Table - Snippet Index -->
-  </div>
-  <!-- Panel Body -->
+<!-- Page Content -->
+<div class="row">
+	<div class="col-lg-12">
+
+		<!-- Panel -->
+		<div class="panel panel-inverse">
+
+			<!-- Panel - Heading -->
+			<div class="panel-heading">
+				<h4 class="panel-title"><%= yield(:phc_title) %></h4>
+			</div>
+			<!-- Panel - Heading -->
+
+			<!-- Panel - Body -->
+			<div class="panel-body">
+
+				<!-- Index - Table -->
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered">
+
+                        <thead>
+                            <tr>
+                                <th>Script Url</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% @script_urls.each do |script_url| %>
+                                <tr>
+                                    <td><%= script_url.script_url %></td>
+                                    <td>
+                                        <div class="btn-group d-flex" role="group">
+                                            <%= link_to "URL Details", snippet_post_url_path(script_url.snippet, script_url), class: "btn btn-purple btn-xs" %>
+                                            <%= link_to "Update URL", edit_snippet_post_url_path(script_url.snippet, script_url), class: "btn btn-primary btn-xs" %>
+                                            <%= link_to "Remove URL", snippet_post_url_path(script_url.snippet, script_url), method: :delete, data: { confirm: "Are you sure? This action cannot be reversed." }, class: "btn btn-danger btn-xs" %>
+                                        </div>
+                                    </td>
+                                </tr>
+    						<% end %>
+						</tbody>
+
+					</table>
+				</div>
+				<!-- Index - Table -->
+
+				<!-- New Button -->
+                <%= link_to phcdevworks_scripts.new_snippet_post_url_path, class: "btn btn-primary btn-sm" do %>
+                    <i class="fad fa-plus-circle"></i>
+                    Add a New Script URL
+				<% end %>
+				<!-- New Button -->
+
+			</div>
+			<!-- Panel - Body -->
+
+		</div>
+		<!-- Panel -->
+
+	</div>
 </div>
-<!-- Page & Panel Content -->
+<!-- Page Content -->
