@@ -2,55 +2,55 @@ $:.push File.expand_path("lib", __dir__)
 require "phcdevworks_scripts/version"
 
 Gem::Specification.new do |spec|
-  
-  spec.name        = "phcdevworks_scripts"
-  spec.version     = PhcdevworksScripts::VERSION
-  spec.authors     = ["PHCDevworks"]
-  spec.email       = ["developers@phcdevworks.com"]
-  spec.homepage    = "https://phcdevworks.com/"
-  spec.summary     = "Rails 6 Script Engine"
-  spec.description = "Ruby on Rails 6 script management engine for website script CDN and snippet listings."
-  spec.license     = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  #if spec.respond_to?(:metadata)
-  #spec.metadata["allowed_push_host"] = "TODO: Set to "http://mygemserver.com""
-  #else
-  #raise "RubyGems 2.0 or newer is required to protect against " \
-  #"public gem pushes."
-  #end
+    spec.name        = "phcdevworks_scripts"
+    spec.version     = PhcdevworksScripts::VERSION
+    spec.authors     = ["PHCDevworks"]
+    spec.email       = ["info@phcdevworks.com"]
+    spec.homepage    = "https://phcdevworks.com/"
+    spec.summary     = "Rails 6 - Engine - Script CDN and Snippets"
+    spec.description = "Ruby on Rails 6 Script CDN and Code Snippets Listing Management Engine."
+    spec.license     = "MIT"
 
-  spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+    # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
+    # to allow pushing to a single host or delete this section to allow pushing to any host.
+    #if spec.respond_to?(:metadata)
+    #spec.metadata["allowed_push_host"] = "TODO: Set to "http://mygemserver.com""
+    #else
+    #raise "RubyGems 2.0 or newer is required to protect against " \
+    #"public gem pushes."
+    #end
 
-  # Main Dependencies
-  spec.add_dependency "rails", "~> 6.0"
-  spec.add_dependency "jbuilder", "~> 2.9"
-  spec.add_dependency "paper_trail", "~> 10.3"
+    spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  # Theme Dependencies
-  spec.add_dependency "phcthemes_admin_panel_pack", "~> 1.2.3"
-  spec.add_dependency "phcthemes_web_theme_pack", "~> 1.1.0"
+    # Main Dependencies
+    spec.add_dependency "rails", "~> 6.0"
+    spec.add_dependency "jbuilder", "~> 2.9"
+    spec.add_dependency "paper_trail", "~> 10.3"
 
-  # Helper Dependencies
-  # spec.add_dependency "phcdevworks_core", "~> 1.0.1"
-  spec.add_dependency "phcdevworks_active_menus", "~> 1.0.1"
-  spec.add_dependency "phcdevworks_notifications", "~> 1.0.1"
-  spec.add_dependency "phcdevworks_titleseo", "~> 1.0.1"
+    # Theme Dependencies
+    spec.add_dependency "phcthemes_admin_panel_pack", "~> 1.2.3"
+    spec.add_dependency "phcthemes_web_theme_pack", "~> 1.1.0"
 
-  # Frontend Dependencies
-  spec.add_dependency "friendly_id", "~> 5.3"
-  spec.add_dependency "gravtastic", "~> 3.2"
+    # Helper Dependencies
+    spec.add_dependency "phcdevworks_core", "~> 1.0.1"
+    spec.add_dependency "phcdevworks_active_menus", "~> 1.0.1"
+    spec.add_dependency "phcdevworks_notifications", "~> 1.0.1"
+    spec.add_dependency "phcdevworks_titleseo", "~> 1.0.1"
 
-  # Images & Service Support Dependencies
-  spec.add_dependency "aws-sdk-s3", "~> 1.48"
-  spec.add_dependency "google-cloud-storage", "~> 1.21"
-  spec.add_dependency "mini_magick", "~> 4.9"
+    # Frontend Dependencies
+    spec.add_dependency "friendly_id", "~> 5.3"
+    spec.add_dependency "gravtastic", "~> 3.2"
 
-  # Security Dependencies
-  spec.add_dependency "phcdevworks_accounts", "~> 1.2.0"
+    # Images & Service Support Dependencies
+    spec.add_dependency "aws-sdk-s3", "~> 1.48"
+    spec.add_dependency "google-cloud-storage", "~> 1.21"
+    spec.add_dependency "mini_magick", "~> 4.9"
 
-  # Development Dependencies
-  spec.add_development_dependency "sqlite3", "~> 1.4"
+    # Security Dependencies
+    spec.add_dependency "phcdevworks_accounts", "~> 1.2.0"
+
+    # Development Dependencies
+    spec.add_development_dependency "sqlite3", "~> 1.4"
 
 end
