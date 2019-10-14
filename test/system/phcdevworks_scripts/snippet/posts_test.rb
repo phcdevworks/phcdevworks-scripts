@@ -15,8 +15,6 @@ module PhcdevworksScripts
       visit snippet_posts_url
       click_on "New Snippet/Post"
 
-      fill_in "Snippet code", with: @snippet_post.snippet_code
-      fill_in "Snippet title", with: @snippet_post.snippet_title
       click_on "Create Post"
 
       assert_text "Post was successfully created"
@@ -27,8 +25,6 @@ module PhcdevworksScripts
       visit snippet_posts_url
       click_on "Edit", match: :first
 
-      fill_in "Snippet code", with: @snippet_post.snippet_code
-      fill_in "Snippet title", with: @snippet_post.snippet_title
       click_on "Update Post"
 
       assert_text "Post was successfully updated"

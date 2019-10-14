@@ -20,7 +20,7 @@ module PhcdevworksScripts
 
     test "should create snippet_post" do
       assert_difference('Snippet::Post.count') do
-        post snippet_posts_url, params: { snippet_post: { snippet_code: @snippet_post.snippet_code, snippet_title: @snippet_post.snippet_title } }
+        post snippet_posts_url, params: { snippet_post: {  } }
       end
 
       assert_redirected_to snippet_post_url(Snippet::Post.last)
@@ -37,7 +37,7 @@ module PhcdevworksScripts
     end
 
     test "should update snippet_post" do
-      patch snippet_post_url(@snippet_post), params: { snippet_post: { snippet_code: @snippet_post.snippet_code, snippet_title: @snippet_post.snippet_title } }
+      patch snippet_post_url(@snippet_post), params: { snippet_post: {  } }
       assert_redirected_to snippet_post_url(@snippet_post)
     end
 

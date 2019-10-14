@@ -20,7 +20,7 @@ module PhcdevworksScripts
 
     test "should create script_extension" do
       assert_difference('Script::Extension.count') do
-        post script_extensions_url, params: { script_extension: { script_extension: @script_extension.script_extension, script_extension_description: @script_extension.script_extension_description, script_extension_name: @script_extension.script_extension_name } }
+        post script_extensions_url, params: { script_extension: {  } }
       end
 
       assert_redirected_to script_extension_url(Script::Extension.last)
@@ -37,7 +37,7 @@ module PhcdevworksScripts
     end
 
     test "should update script_extension" do
-      patch script_extension_url(@script_extension), params: { script_extension: { script_extension: @script_extension.script_extension, script_extension_description: @script_extension.script_extension_description, script_extension_name: @script_extension.script_extension_name } }
+      patch script_extension_url(@script_extension), params: { script_extension: {  } }
       assert_redirected_to script_extension_url(@script_extension)
     end
 

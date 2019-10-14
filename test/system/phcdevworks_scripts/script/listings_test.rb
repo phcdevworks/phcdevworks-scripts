@@ -15,16 +15,6 @@ module PhcdevworksScripts
       visit script_listings_url
       click_on "New Script/Listing"
 
-      fill_in "Listing description", with: @script_listing.listing_description
-      fill_in "Listing script beta release", with: @script_listing.listing_script_beta_release
-      fill_in "Listing script initial release", with: @script_listing.listing_script_initial_release
-      fill_in "Listing script lastest release", with: @script_listing.listing_script_lastest_release
-      fill_in "Listing script lastest release cdn", with: @script_listing.listing_script_lastest_release_cdn
-      fill_in "Listing script repo", with: @script_listing.listing_script_repo
-      fill_in "Listing script source", with: @script_listing.listing_script_source
-      fill_in "Listing script status", with: @script_listing.listing_script_status
-      fill_in "Listing script website", with: @script_listing.listing_script_website
-      fill_in "Listing title", with: @script_listing.listing_title
       click_on "Create Listing"
 
       assert_text "Listing was successfully created"
@@ -35,16 +25,6 @@ module PhcdevworksScripts
       visit script_listings_url
       click_on "Edit", match: :first
 
-      fill_in "Listing description", with: @script_listing.listing_description
-      fill_in "Listing script beta release", with: @script_listing.listing_script_beta_release
-      fill_in "Listing script initial release", with: @script_listing.listing_script_initial_release
-      fill_in "Listing script lastest release", with: @script_listing.listing_script_lastest_release
-      fill_in "Listing script lastest release cdn", with: @script_listing.listing_script_lastest_release_cdn
-      fill_in "Listing script repo", with: @script_listing.listing_script_repo
-      fill_in "Listing script source", with: @script_listing.listing_script_source
-      fill_in "Listing script status", with: @script_listing.listing_script_status
-      fill_in "Listing script website", with: @script_listing.listing_script_website
-      fill_in "Listing title", with: @script_listing.listing_title
       click_on "Update Listing"
 
       assert_text "Listing was successfully updated"

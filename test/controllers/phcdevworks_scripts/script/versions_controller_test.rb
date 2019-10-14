@@ -20,7 +20,7 @@ module PhcdevworksScripts
 
     test "should create script_version" do
       assert_difference('Script::Version.count') do
-        post script_versions_url, params: { script_version: { script_version_number: @script_version.script_version_number } }
+        post script_versions_url, params: { script_version: {  } }
       end
 
       assert_redirected_to script_version_url(Script::Version.last)
@@ -37,7 +37,7 @@ module PhcdevworksScripts
     end
 
     test "should update script_version" do
-      patch script_version_url(@script_version), params: { script_version: { script_version_number: @script_version.script_version_number } }
+      patch script_version_url(@script_version), params: { script_version: {  } }
       assert_redirected_to script_version_url(@script_version)
     end
 

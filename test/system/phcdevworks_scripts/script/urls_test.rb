@@ -15,7 +15,6 @@ module PhcdevworksScripts
       visit script_urls_url
       click_on "New Script/Url"
 
-      fill_in "Script cdn url", with: @script_url.script_cdn_url
       click_on "Create Url"
 
       assert_text "Url was successfully created"
@@ -26,7 +25,6 @@ module PhcdevworksScripts
       visit script_urls_url
       click_on "Edit", match: :first
 
-      fill_in "Script cdn url", with: @script_url.script_cdn_url
       click_on "Update Url"
 
       assert_text "Url was successfully updated"

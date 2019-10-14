@@ -15,9 +15,6 @@ module PhcdevworksScripts
       visit script_extensions_url
       click_on "New Script/Extension"
 
-      fill_in "Script extension", with: @script_extension.script_extension
-      fill_in "Script extension description", with: @script_extension.script_extension_description
-      fill_in "Script extension name", with: @script_extension.script_extension_name
       click_on "Create Extension"
 
       assert_text "Extension was successfully created"
@@ -28,9 +25,6 @@ module PhcdevworksScripts
       visit script_extensions_url
       click_on "Edit", match: :first
 
-      fill_in "Script extension", with: @script_extension.script_extension
-      fill_in "Script extension description", with: @script_extension.script_extension_description
-      fill_in "Script extension name", with: @script_extension.script_extension_name
       click_on "Update Extension"
 
       assert_text "Extension was successfully updated"

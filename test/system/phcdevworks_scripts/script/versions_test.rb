@@ -15,7 +15,6 @@ module PhcdevworksScripts
       visit script_versions_url
       click_on "New Script/Version"
 
-      fill_in "Script version number", with: @script_version.script_version_number
       click_on "Create Version"
 
       assert_text "Version was successfully created"
@@ -26,7 +25,6 @@ module PhcdevworksScripts
       visit script_versions_url
       click_on "Edit", match: :first
 
-      fill_in "Script version number", with: @script_version.script_version_number
       click_on "Update Version"
 
       assert_text "Version was successfully updated"

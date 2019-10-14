@@ -15,10 +15,6 @@ module PhcdevworksScripts
       visit script_authors_url
       click_on "New Script/Author"
 
-      fill_in "Author first name", with: @script_author.author_first_name
-      fill_in "Author github", with: @script_author.author_github
-      fill_in "Author last name", with: @script_author.author_last_name
-      fill_in "Author website", with: @script_author.author_website
       click_on "Create Author"
 
       assert_text "Author was successfully created"
@@ -29,10 +25,6 @@ module PhcdevworksScripts
       visit script_authors_url
       click_on "Edit", match: :first
 
-      fill_in "Author first name", with: @script_author.author_first_name
-      fill_in "Author github", with: @script_author.author_github
-      fill_in "Author last name", with: @script_author.author_last_name
-      fill_in "Author website", with: @script_author.author_website
       click_on "Update Author"
 
       assert_text "Author was successfully updated"

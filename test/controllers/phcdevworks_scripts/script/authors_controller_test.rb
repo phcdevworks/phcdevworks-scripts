@@ -20,7 +20,7 @@ module PhcdevworksScripts
 
     test "should create script_author" do
       assert_difference('Script::Author.count') do
-        post script_authors_url, params: { script_author: { author_first_name: @script_author.author_first_name, author_github: @script_author.author_github, author_last_name: @script_author.author_last_name, author_website: @script_author.author_website } }
+        post script_authors_url, params: { script_author: {  } }
       end
 
       assert_redirected_to script_author_url(Script::Author.last)
@@ -37,7 +37,7 @@ module PhcdevworksScripts
     end
 
     test "should update script_author" do
-      patch script_author_url(@script_author), params: { script_author: { author_first_name: @script_author.author_first_name, author_github: @script_author.author_github, author_last_name: @script_author.author_last_name, author_website: @script_author.author_website } }
+      patch script_author_url(@script_author), params: { script_author: {  } }
       assert_redirected_to script_author_url(@script_author)
     end
 

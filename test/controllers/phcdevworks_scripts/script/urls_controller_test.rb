@@ -20,7 +20,7 @@ module PhcdevworksScripts
 
     test "should create script_url" do
       assert_difference('Script::Url.count') do
-        post script_urls_url, params: { script_url: { script_cdn_url: @script_url.script_cdn_url } }
+        post script_urls_url, params: { script_url: {  } }
       end
 
       assert_redirected_to script_url_url(Script::Url.last)
@@ -37,7 +37,7 @@ module PhcdevworksScripts
     end
 
     test "should update script_url" do
-      patch script_url_url(@script_url), params: { script_url: { script_cdn_url: @script_url.script_cdn_url } }
+      patch script_url_url(@script_url), params: { script_url: {  } }
       assert_redirected_to script_url_url(@script_url)
     end
 

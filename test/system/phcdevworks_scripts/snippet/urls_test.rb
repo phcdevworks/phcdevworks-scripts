@@ -15,7 +15,6 @@ module PhcdevworksScripts
       visit snippet_urls_url
       click_on "New Snippet/Url"
 
-      fill_in "Script url", with: @snippet_url.script_url
       click_on "Create Url"
 
       assert_text "Url was successfully created"
@@ -26,7 +25,6 @@ module PhcdevworksScripts
       visit snippet_urls_url
       click_on "Edit", match: :first
 
-      fill_in "Script url", with: @snippet_url.script_url
       click_on "Update Url"
 
       assert_text "Url was successfully updated"

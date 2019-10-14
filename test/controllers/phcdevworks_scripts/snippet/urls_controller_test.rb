@@ -20,7 +20,7 @@ module PhcdevworksScripts
 
     test "should create snippet_url" do
       assert_difference('Snippet::Url.count') do
-        post snippet_urls_url, params: { snippet_url: { script_url: @snippet_url.script_url } }
+        post snippet_urls_url, params: { snippet_url: {  } }
       end
 
       assert_redirected_to snippet_url_url(Snippet::Url.last)
@@ -37,7 +37,7 @@ module PhcdevworksScripts
     end
 
     test "should update snippet_url" do
-      patch snippet_url_url(@snippet_url), params: { snippet_url: { script_url: @snippet_url.script_url } }
+      patch snippet_url_url(@snippet_url), params: { snippet_url: {  } }
       assert_redirected_to snippet_url_url(@snippet_url)
     end
 
