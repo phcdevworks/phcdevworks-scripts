@@ -12,14 +12,14 @@ module PhcdevworksScripts
     has_many :urls, class_name: 'PhcdevworksScripts::Script::Url'
 
     # Form Fields Validation
-    validates :script_version_number,
+    validates :version_number,
       presence: true
 
     # Clean URL Define
     friendly_id :phcdev_script_version_nice_urls, use: [:slugged, :finders]
 
     def phcdev_script_version_nice_urls
-      [:script_version_number]
+      [:version_number]
     end
 
   end

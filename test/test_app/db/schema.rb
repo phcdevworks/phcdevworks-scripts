@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_112364) do
+ActiveRecord::Schema.define(version: 2019_10_28_233031) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -127,9 +127,9 @@ ActiveRecord::Schema.define(version: 2019_10_15_112364) do
   end
 
   create_table "phcdevworks_scripts_script_extensions", force: :cascade do |t|
-    t.string "script_extension_name"
-    t.string "script_extension_description"
-    t.string "script_extension"
+    t.string "extension_name"
+    t.string "extension_description"
+    t.string "extension"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -158,9 +158,9 @@ ActiveRecord::Schema.define(version: 2019_10_15_112364) do
   end
 
   create_table "phcdevworks_scripts_script_urls", force: :cascade do |t|
-    t.string "script_cdn_url"
-    t.date "script_cdn_url_release"
-    t.date "script_cdn_url_cdn_update"
+    t.string "cdn_url"
+    t.date "cdn_url_release"
+    t.date "cdn_url_cdn_update"
     t.integer "listing_id"
     t.integer "extension_id"
     t.integer "version_id"
@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(version: 2019_10_15_112364) do
   end
 
   create_table "phcdevworks_scripts_script_versions", force: :cascade do |t|
-    t.string "script_version_number"
+    t.string "version_number"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"

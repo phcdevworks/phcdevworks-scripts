@@ -47,9 +47,9 @@
 						<tbody>
 							<% @script_urls.each do |script_url| %>
 								<tr>
-									<td><%= link_to script_url.script_cdn_url, script_listing_url_path(script_url.listing, script_url) %></td>
-									<td><%= link_to script_url.script_cdn_url_release, script_listing_url_path(script_url.listing, script_url) %></td>
-									<td><%= link_to script_url.script_cdn_url_cdn_update, script_listing_url_path(script_url.listing, script_url) %></td>
+									<td><%= link_to script_url.cdn_url, script_listing_url_path(script_url.listing, script_url) %></td>
+									<td><%= link_to script_url.cdn_url_release, script_listing_url_path(script_url.listing, script_url) %></td>
+									<td><%= link_to script_url.cdn_url_cdn_update, script_listing_url_path(script_url.listing, script_url) %></td>
 								</tr>
 							<% end %>
 						</tbody>
