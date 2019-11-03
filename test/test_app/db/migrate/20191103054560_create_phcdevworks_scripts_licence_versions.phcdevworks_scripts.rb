@@ -1,5 +1,5 @@
 # This migration comes from phcdevworks_scripts (originally 20170517064427)
-class CreatePhcdevworksScriptsLicenceVersions < ActiveRecord::Migration[5.2]
+class CreatePhcdevworksScriptsLicenceVersions < ActiveRecord::Migration[6.0]
   TEXT_BYTES = 1_073_741_823
   def change
 
@@ -12,7 +12,7 @@ class CreatePhcdevworksScriptsLicenceVersions < ActiveRecord::Migration[5.2]
       t.datetime :created_at
     end
 
-    add_index :phcdevworks_scripts_licence_versions, %i(item_type item_id), :name => 'scriptcdnpro_licence_versions'
+    add_index :phcdevworks_scripts_licence_versions, %i(item_type item_id), :name => 'script_licence_versions'
 
   end
 end

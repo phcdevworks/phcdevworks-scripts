@@ -5,7 +5,7 @@ module PhcdevworksScripts
     extend FriendlyId
 
     # Paper Trail Initialize
-    has_paper_trail :class_name => 'PhcdevworksScripts::ListingVersions'
+    has_paper_trail :class_name => 'PhcdevworksScripts::ScriptListingVersions'
 
     # Relationships
     has_many :urls, class_name: 'PhcdevworksScripts::Script::Url', :dependent => :destroy

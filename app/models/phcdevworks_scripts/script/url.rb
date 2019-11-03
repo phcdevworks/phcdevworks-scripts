@@ -2,7 +2,7 @@ module PhcdevworksScripts
   class Script::Url < ApplicationRecord
 
     # Paper Trail Initialize
-    has_paper_trail :class_name => 'PhcdevworksScripts::UrlVersions'
+    has_paper_trail :class_name => 'PhcdevworksScripts::ScriptUrlVersions'
 
     # Relationships
     belongs_to :listing, class_name: 'PhcdevworksScripts::Script::Listing'

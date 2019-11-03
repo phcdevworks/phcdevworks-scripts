@@ -44,14 +44,14 @@
                         </thead>
 
                         <tbody>
-                            <% @script_urls.each do |script_url| %>
+                            <% @snippet_urls.each do |snippet_url| %>
                                 <tr>
-                                    <td><%= script_url.script_url %></td>
+                                    <td><%= snippet_url.snippet_url %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">
-                                            <%= link_to "URL Details", snippet_post_url_path(script_url.snippet, script_url), class: "btn btn-purple btn-xs" %>
-                                            <%= link_to "Update URL", edit_snippet_post_url_path(script_url.snippet, script_url), class: "btn btn-primary btn-xs" %>
-                                            <%= link_to "Remove URL", snippet_post_url_path(script_url.snippet, script_url), method: :delete, data: { confirm: "Are you sure? This action cannot be reversed." }, class: "btn btn-danger btn-xs" %>
+                                            <%= link_to "URL Details", snippet_post_url_path(snippet_url.post, snippet_url), class: "btn btn-purple btn-xs" %>
+                                            <%= link_to "Update URL", edit_snippet_post_url_path(snippet_url.post, snippet_url), class: "btn btn-primary btn-xs" %>
+                                            <%= link_to "Remove URL", snippet_post_url_path(snippet_url.post, snippet_url), method: :delete, data: { confirm: "Are you sure? This action cannot be reversed." }, class: "btn btn-danger btn-xs" %>
                                         </div>
                                     </td>
                                 </tr>

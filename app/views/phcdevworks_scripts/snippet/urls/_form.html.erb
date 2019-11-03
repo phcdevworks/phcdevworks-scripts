@@ -1,14 +1,14 @@
 <!-- Form - Script - Script URLs -->
-<%= form_with(model: [ @script_snippet, @script_url], url: form_url, local: true) do |form| %>
+<%= form_with(model: [ @script_snippet, @snippet_url], url: form_url, local: true) do |form| %>
 
 	<!-- PHCNotifi Render Validation -->
-	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @article_post %>
+	<%= render "phcdevworks_notifications/bootstrap/validations", :object => @snippet_url %>
 	<!-- PHCNotifi Render Validation -->
 
 	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
-		<%= form.label :script_url %>
-		<%= form.text_field :script_url, placeholder: "Script Url", class: "form-control" %>
+		<%= form.label :snippet_url %>
+		<%= form.text_field :snippet_url, placeholder: "Script Url", class: "form-control" %>
 	</div>
 	<!-- Form Input Fields -->
 

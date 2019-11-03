@@ -4,8 +4,11 @@ module PhcdevworksScripts
     # Include Core Validations
     phc_domain_regx = URI::regexp(%w(http https))
 
+    # Paper Trail Initialize
+    has_paper_trail :class_name => 'PhcdevworksScripts::SnippetUrlVersions'
+
     # Relationships
-    belongs_to :snippet, class_name: 'PhcdevworksScripts::Script::Snippet'
+    belongs_to :post, class_name: 'PhcdevworksScripts::Snippet::Post'
 
     # Form Fields Validation
     validates :snippet_url,

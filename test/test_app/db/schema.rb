@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_28_233031) do
+ActiveRecord::Schema.define(version: 2019_11_03_054573) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_233031) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "scriptcdnpro_author_versions"
+    t.index ["item_type", "item_id"], name: "script_author_versions"
   end
 
   create_table "phcdevworks_scripts_extension_versions", force: :cascade do |t|
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_233031) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "scriptcdnpro_ext_versions"
+    t.index ["item_type", "item_id"], name: "script_ext_versions"
   end
 
   create_table "phcdevworks_scripts_licence_versions", force: :cascade do |t|
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_233031) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "scriptcdnpro_licence_versions"
+    t.index ["item_type", "item_id"], name: "script_licence_versions"
   end
 
   create_table "phcdevworks_scripts_listing_versions", force: :cascade do |t|
@@ -111,7 +111,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_233031) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "scriptcdnpro_listing_versions"
+    t.index ["item_type", "item_id"], name: "script_listing_versions"
   end
 
   create_table "phcdevworks_scripts_script_authors", force: :cascade do |t|
@@ -174,8 +174,18 @@ ActiveRecord::Schema.define(version: 2019_10_28_233031) do
     t.index ["version_id"], name: "index_phcdevworks_scripts_script_urls_on_version_id"
   end
 
+  create_table "phcdevworks_scripts_script_version_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "script_version_versions"
+  end
+
   create_table "phcdevworks_scripts_script_versions", force: :cascade do |t|
-    t.string "version_number"
+    t.string "script_version_number"
     t.string "slug"
     t.string "user_id"
     t.string "org_id"
@@ -183,14 +193,14 @@ ActiveRecord::Schema.define(version: 2019_10_28_233031) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "phcdevworks_scripts_scriptversion_versions", force: :cascade do |t|
+  create_table "phcdevworks_scripts_snippet_post_versions", force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
     t.string "event", null: false
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "scriptcdnpro_scriptversion_versions"
+    t.index ["item_type", "item_id"], name: "snippet_post_versions"
   end
 
   create_table "phcdevworks_scripts_snippet_posts", force: :cascade do |t|
@@ -201,6 +211,16 @@ ActiveRecord::Schema.define(version: 2019_10_28_233031) do
     t.string "org_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "phcdevworks_scripts_snippet_url_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "snippet_url_versions"
   end
 
   create_table "phcdevworks_scripts_snippet_urls", force: :cascade do |t|
@@ -221,7 +241,7 @@ ActiveRecord::Schema.define(version: 2019_10_28_233031) do
     t.string "whodunnit"
     t.text "object", limit: 1073741823
     t.datetime "created_at"
-    t.index ["item_type", "item_id"], name: "scriptcdnpro_url_versions"
+    t.index ["item_type", "item_id"], name: "script_url_versions"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

@@ -1,3 +1,4 @@
+# This migration comes from phcdevworks_scripts (originally 20191102092711)
 class CreatePhcdevworksScriptsSnippetPostVersions < ActiveRecord::Migration[6.0]
   TEXT_BYTES = 1_073_741_823
   def change

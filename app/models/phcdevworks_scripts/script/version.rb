@@ -5,21 +5,21 @@ module PhcdevworksScripts
     extend FriendlyId
 
     # Paper Trail Initialize
-    has_paper_trail :class_name => 'PhcdevworksScripts::ScriptversionVersions'
+    has_paper_trail :class_name => 'PhcdevworksScripts::ScriptVersionVersions'
 
     # Relationships
     has_many :listings, class_name: 'PhcdevworksScripts::Script::Listing', :through => :urls
     has_many :urls, class_name: 'PhcdevworksScripts::Script::Url'
 
     # Form Fields Validation
-    validates :version_number,
+    validates :script_version_number,
       presence: true
 
     # Clean URL Define
     friendly_id :phcdev_script_version_nice_urls, use: [:slugged, :finders]
 
     def phcdev_script_version_nice_urls
-      [:version_number]
+      [:script_version_number]
     end
 
   end

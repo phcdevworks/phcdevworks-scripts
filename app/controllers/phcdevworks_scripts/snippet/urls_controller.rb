@@ -5,23 +5,23 @@ module PhcdevworksScripts
 
     # Filters & Security
     #include PhcdevworksCore::PhcpluginsHelper
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
     before_action :set_paper_trail_whodunnit
     before_action :set_snippet_url, only: [:show, :edit, :update, :destroy]
 
     # INDEX
     def index
-      @script_urls = snippet_post.urls.all
+      @snippet_urls = snippet_post.urls.all
     end
 
     # SHOW
     def show
-      @script_url = snippet_post.urls.find(params[:id])
+      @snippet_url = snippet_post.urls.find(params[:id])
     end
 
     # NEW
     def new
-      @script_url = snippet_post.urls.build
+      @snippet_url = snippet_post.urls.build
     end
 
     # EDIT
@@ -30,11 +30,11 @@ module PhcdevworksScripts
 
     # CREATE
     def create
-      @script_url = snippet_post.urls.create(script_url_params)
-      @script_url.user_id = current_user.id
-      @script_url.org_id = current_user.org_id
-      if @script_url.save
-        redirect_to script_snippet_urls_path, :flash => { :success => 'Script url was successfully created.' }
+      @snippet_url = snippet_post.urls.create(snippet_url_params)
+      @snippet_url.user_id = current_user.id
+      @snippet_url.org_id = current_user.org_id
+      if @snippet_url.save
+        redirect_to snippet_post_urls_path, :flash => { :success => 'Script url was successfully created.' }
       else
         render :new
       end
@@ -42,9 +42,9 @@ module PhcdevworksScripts
 
     # UPDATE
     def update
-      @script_snippet = Snippet::Url.find(params[:snippet_id])
-      if @script_url.update(script_url_params)
-        redirect_to script_snippet_urls_path, :flash => { :success => 'Script url was successfully updated.' }
+      @snippet_post = Snippet::Post.friendly.find(params[:post_id])
+      if @snippet_url.update(snippet_url_params)
+        redirect_to snippet_post_urls_path, :flash => { :success => 'Script url was successfully updated.' }
       else
         render :edit
       end
@@ -52,9 +52,9 @@ module PhcdevworksScripts
 
     # DELETE
     def destroy
-      @script_url = snippet_post.urls.find(params[:id])
-      @script_url.destroy
-      redirect_to script_snippet_urls_path, :flash => { :error => 'Script url was successfully destroyed.' }
+      @snippet_url = snippet_post.urls.find(params[:id])
+      @snippet_url.destroy
+      redirect_to snippet_post_urls_path, :flash => { :error => 'Script url was successfully destroyed.' }
     end
 
     private
@@ -70,7 +70,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def snippet_url_params
-      params.require(:snippet_url).permit(:snippet_url)
+      params.require(:snippet_url).permit(:snippet_url, :post_id, :slug, :user_id, :org_id)
     end
 
   end

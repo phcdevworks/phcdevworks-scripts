@@ -1,4 +1,4 @@
-class CreatePhcdevworksScriptsUrlVersions < ActiveRecord::Migration[5.2]
+class CreatePhcdevworksScriptsUrlVersions < ActiveRecord::Migration[6.0]
   TEXT_BYTES = 1_073_741_823
   def change
 
@@ -11,7 +11,7 @@ class CreatePhcdevworksScriptsUrlVersions < ActiveRecord::Migration[5.2]
       t.datetime :created_at
     end
 
-    add_index :phcdevworks_scripts_url_versions, %i(item_type item_id), :name => 'scriptcdnpro_url_versions'
+    add_index :phcdevworks_scripts_url_versions, %i(item_type item_id), :name => 'script_url_versions'
 
   end
 end
