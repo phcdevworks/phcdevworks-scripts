@@ -3,7 +3,7 @@ class CreatePhcdevworksScriptsScriptListings < ActiveRecord::Migration[6.0]
     create_table :phcdevworks_scripts_script_listings do |t|
 
       t.string :listing_title
-      t.string :listing_description
+      t.text :listing_description
       t.string :listing_script_source
       t.string :listing_script_website
       t.string :listing_script_repo

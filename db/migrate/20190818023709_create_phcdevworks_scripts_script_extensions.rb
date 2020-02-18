@@ -3,7 +3,7 @@ class CreatePhcdevworksScriptsScriptExtensions < ActiveRecord::Migration[6.0]
     create_table :phcdevworks_scripts_script_extensions do |t|
 
       t.string :extension_name
-      t.string :extension_description
+      t.text :extension_description
       t.string :extension
 
       t.string :slug
