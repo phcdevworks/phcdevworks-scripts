@@ -28,6 +28,7 @@ module PhcdevworksScripts
 
     # Load User Accounts
     require "phcdevworks_accounts"
+    require "phcdevworks_core_modules"
 
     # Engine Namespace
     isolate_namespace PhcdevworksScripts
