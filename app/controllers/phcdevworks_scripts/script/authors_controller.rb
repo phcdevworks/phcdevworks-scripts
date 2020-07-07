@@ -76,7 +76,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def script_author_params
-      params.require(:script_author).permit(:author_first_name, :author_last_name, :author_website, :author_github)
+      params.require(:script_author).permit(:author_first_name, :author_last_name, :author_website, :author_github, :slug, :user_id, :org_id)
     end
 
   end

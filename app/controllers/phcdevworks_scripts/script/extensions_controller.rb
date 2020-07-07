@@ -76,7 +76,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def script_extension_params
-      params.require(:script_extension).permit(:extension_name, :extension_description, :extension)
+      params.require(:script_extension).permit(:extension_name, :extension_description, :extension, :slug, :user_id, :org_id)
     end
 
   end

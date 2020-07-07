@@ -76,7 +76,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def script_listing_params
-      params.require(:script_listing).permit(:listing_title, :listing_description, :listing_script_source, :listing_script_website, :listing_script_repo, :listing_script_initial_release, :listing_script_lastest_release, :listing_script_beta_release, :listing_script_lastest_release_cdn, :listing_script_status, :author_id)
+      params.require(:script_listing).permit(:listing_title, :listing_description, :listing_script_source, :listing_script_website, :listing_script_repo, :listing_script_initial_release, :listing_script_lastest_release, :listing_script_beta_release, :listing_script_lastest_release_cdn, :listing_script_status, :author_id, :slug, :user_id, :org_id)
     end
 
   end

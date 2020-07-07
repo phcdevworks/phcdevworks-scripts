@@ -76,7 +76,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def script_version_params
-      params.require(:script_version).permit(:script_version_number)
+      params.require(:script_version).permit(:script_version_number, :slug, :user_id, :org_id)
     end
 
   end

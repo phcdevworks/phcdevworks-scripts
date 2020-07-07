@@ -71,7 +71,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def script_url_params
-      params.require(:script_url).permit(:cdn_url, :cdn_url_release, :cdn_url_cdn_update, :version_id, :extension_id)
+      params.require(:script_url).permit(:cdn_url, :cdn_url_release, :cdn_url_cdn_update, :version_id, :extension_id, :slug, :user_id, :org_id)
     end
 
   end

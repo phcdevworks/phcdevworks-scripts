@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_03_054573) do
+ActiveRecord::Schema.define(version: 2020_07_07_125066) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -74,6 +74,54 @@ ActiveRecord::Schema.define(version: 2019_11_03_054573) do
     t.index ["username"], name: "index_phcdevworks_accounts_users_on_username", unique: true
   end
 
+  create_table "phcdevworks_core_modules_category_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "core_category_versions"
+  end
+
+  create_table "phcdevworks_core_modules_marketing_optimizations", force: :cascade do |t|
+    t.string "seo_title"
+    t.text "seo_description"
+    t.string "seo_open_graph_post_type"
+    t.string "seo_open_graph_url"
+    t.string "seo_open_graph_title"
+    t.text "seo_open_graph_description"
+    t.string "seo_twitter_post_type"
+    t.string "seo_twitter_url"
+    t.string "seo_twitter_title"
+    t.text "seo_twitter_description"
+    t.string "slug"
+    t.string "user_id"
+    t.string "org_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "phcdevworks_core_modules_optimization_versions", force: :cascade do |t|
+    t.string "item_type", null: false
+    t.integer "item_id", null: false
+    t.string "event", null: false
+    t.string "whodunnit"
+    t.text "object", limit: 1073741823
+    t.datetime "created_at"
+    t.index ["item_type", "item_id"], name: "core_optimize_versions"
+  end
+
+  create_table "phcdevworks_core_modules_post_categories", force: :cascade do |t|
+    t.string "category_name"
+    t.string "slug"
+    t.string "user_id"
+    t.string "org_id"
+    t.string "optimization_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "phcdevworks_scripts_author_versions", force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
@@ -128,7 +176,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_054573) do
 
   create_table "phcdevworks_scripts_script_extensions", force: :cascade do |t|
     t.string "extension_name"
-    t.string "extension_description"
+    t.text "extension_description"
     t.string "extension"
     t.string "slug"
     t.string "user_id"
@@ -139,7 +187,7 @@ ActiveRecord::Schema.define(version: 2019_11_03_054573) do
 
   create_table "phcdevworks_scripts_script_listings", force: :cascade do |t|
     t.string "listing_title"
-    t.string "listing_description"
+    t.text "listing_description"
     t.string "listing_script_source"
     t.string "listing_script_website"
     t.string "listing_script_repo"

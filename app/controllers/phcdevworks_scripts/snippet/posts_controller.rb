@@ -75,7 +75,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def snippet_post_params
-      params.require(:snippet_post).permit(:snippet_title, :snippet_code)
+      params.require(:snippet_post).permit(:snippet_title, :snippet_code, :slug, :user_id, :org_id)
     end
 
   end
