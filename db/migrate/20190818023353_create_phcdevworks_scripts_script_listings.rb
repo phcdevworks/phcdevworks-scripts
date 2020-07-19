@@ -14,13 +14,13 @@ class CreatePhcdevworksScriptsScriptListings < ActiveRecord::Migration[6.0]
       t.date :listing_script_beta_release
       t.date :listing_script_lastest_release_cdn
 
-      t.references :author
-
       t.string :optimization_id
 
       t.string :slug
       t.string :user_id
       t.string :org_id
+
+      t.references :author
 
       t.timestamps
 

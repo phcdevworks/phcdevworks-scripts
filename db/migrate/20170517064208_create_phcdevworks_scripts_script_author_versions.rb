@@ -12,7 +12,7 @@ class CreatePhcdevworksScriptsScriptAuthorVersions < ActiveRecord::Migration[6.0
 
     end
     
-    add_index :phcdevworks_scripts_author_versions, %i(item_type item_id), :name => 'script_author_versions'
+    add_index :phcdevworks_scripts_script_author_versions, %i(item_type item_id), :name => 'script_author_versions'
   
   end
 end

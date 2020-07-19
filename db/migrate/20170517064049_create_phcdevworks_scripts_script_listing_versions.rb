@@ -12,7 +12,7 @@ class CreatePhcdevworksScriptsScriptListingVersions < ActiveRecord::Migration[6.
 
     end
 
-    add_index :phcdevworks_scripts_listing_versions, %i(item_type item_id), :name => 'script_listing_versions'
+    add_index :phcdevworks_scripts_script_listing_versions, %i(item_type item_id), :name => 'script_listing_versions'
 
   end
 end

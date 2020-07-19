@@ -2,7 +2,6 @@
 class CreatePhcdevworksScriptsSnippetPostVersions < ActiveRecord::Migration[6.0]
   TEXT_BYTES = 1_073_741_823
   def change
-
     create_table :phcdevworks_scripts_snippet_post_versions do |t|
 
       t.string   :item_type, {:null=>false}
