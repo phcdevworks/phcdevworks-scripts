@@ -16,6 +16,8 @@ class CreatePhcdevworksScriptsScriptListings < ActiveRecord::Migration[6.0]
 
       t.references :author
 
+      t.string :optimization_id
+
       t.string :slug
       t.string :user_id
       t.string :org_id
