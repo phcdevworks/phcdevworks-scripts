@@ -7,58 +7,59 @@
 	
 	<!-- Form Input Fields -->
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_title, "Script Title" %>
-		<%= form.text_field :listing_title, placeholder: "Script Title", class: "form-control" %>
+		<%= form.label :script_listing_title, "Script Title" %>
+		<%= form.text_field :script_listing_title, placeholder: "Script Title", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_description, "Script Description" %>
-		<%= form.text_area :listing_description, placeholder: "Script Description", class: "form-control" %>
+		<%= form.label :script_listing_description, "Script Description" %>
+		<%= form.text_area :script_listing_description, class: "form-control editor" %>
+		<div id="word-count" class="mt-3"></div>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_script_source, "Script Source Code" %>
-		<%= form.text_field :listing_script_source, placeholder: "Script Source", class: "form-control" %>
+		<%= form.label :script_listing_script_source, "Script Source Code" %>
+		<%= form.text_field :script_listing_script_source, placeholder: "Script Source", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_script_website, "Script Website" %>
-		<%= form.text_field :listing_script_website, placeholder: "Script Website", class: "form-control" %>
+		<%= form.label :script_listing_script_website, "Script Website" %>
+		<%= form.text_field :script_listing_script_website, placeholder: "Script Website", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_script_repo, "Script Public Repo" %>
-		<%= form.text_field :listing_script_repo, placeholder: "Script Github Address", class: "form-control" %>
+		<%= form.label :script_listing_script_repo, "Script Public Repo" %>
+		<%= form.text_field :script_listing_script_repo, placeholder: "Script Github Address", class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_script_initial_release, "Initial Release" %>
-		<%= form.date_select :listing_script_initial_release, start_year: 1981, class: "form-control" %>
+		<%= form.label :script_listing_script_initial_release, "Initial Release" %>
+		<%= form.date_select :script_listing_script_initial_release, start_year: 1981, class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_script_lastest_release, "Latest Release" %>
-		<%= form.date_select :listing_script_lastest_release, start_year: 1981, class: "form-control" %>
+		<%= form.label :script_listing_script_lastest_release, "Latest Release" %>
+		<%= form.date_select :script_listing_script_lastest_release, start_year: 1981, class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_script_beta_release, "Preview Release" %>
-		<%= form.date_select :listing_script_beta_release, start_year: 1981, class: "form-control" %>
+		<%= form.label :script_listing_script_beta_release, "Preview Release" %>
+		<%= form.date_select :script_listing_script_beta_release, start_year: 1981, class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_script_lastest_release_cdn, "Script CDN Release" %>
-		<%= form.date_select :listing_script_lastest_release_cdn, start_year: 1981, class: "form-control" %>
+		<%= form.label :script_listing_script_lastest_release_cdn, "Script CDN Release" %>
+		<%= form.date_select :script_listing_script_lastest_release_cdn, start_year: 1981, class: "form-control" %>
 	</div>
 
 	<div class="form-group field_with_errorss">
 		<label>Script Author</label>
-		<%= collection_select(:script_listing, :author_id, PhcdevworksScripts::Script::Author.order("author_first_name"), :id, :author_first_name, {}, {class: "form-control"}) %>
+		<%= collection_select(:script_listing, :author_id, PhcdevworksScripts::Script::Author.order("script_author_first_name"), :id, :script_author_first_name, {}, {class: "form-control"}) %>
 	</div>
 
 	<div class="form-group field_with_errors">
-		<%= form.label :listing_script_status, "Script Status" %>
-		<%= form.select( :listing_script_status, [["Active","Active"],["Outdated","Out Dated"],["Deactivated","Not Active"]], {}, {class: "form-control"}) %>
+		<%= form.label :script_listing_script_status, "Script Status" %>
+		<%= form.select( :script_listing_script_status, [["Active","Active"],["Outdated","Out Dated"],["Deactivated","Not Active"]], {}, {class: "form-control"}) %>
 	</div>
 	<!-- Form Input Fields -->
 

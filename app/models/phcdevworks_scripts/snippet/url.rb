@@ -11,7 +11,7 @@ module PhcdevworksScripts
     belongs_to :post, class_name: 'PhcdevworksScripts::Snippet::Post'
 
     # Form Fields Validation
-    validates :snippet_url,
+    validates :snippet_post_url,
       presence: true,
       format: {  :with => phc_domain_regx, message: "Please follow this URL format http or https://www.**********.com" }
 

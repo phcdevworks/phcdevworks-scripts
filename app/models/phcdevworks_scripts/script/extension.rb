@@ -12,20 +12,20 @@ module PhcdevworksScripts
     has_many :urls, class_name: 'PhcdevworksScripts::Script::Url'
 
     # Form Fields Validation
-    validates :extension_name,
+    validates :script_extension_name,
       presence: true
 
-    validates :extension_description,
+    validates :script_extension_description,
       presence: true
 
-    validates :extension,
+    validates :script_extension,
       presence: true
-    
+
     # Clean URL Define
-    friendly_id :phcdev_script_extension_nice_urls, use: [:slugged, :finders]
+    friendly_id :script_extension_nice_urls, use: [:slugged, :finders]
 
-    def phcdev_script_extension_nice_urls
-      [:extension]
+    def script_extension_nice_urls
+      [:script_extension]
     end
 
   end

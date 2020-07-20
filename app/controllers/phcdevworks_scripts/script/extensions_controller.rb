@@ -17,7 +17,7 @@ module PhcdevworksScripts
     # GET /script/extensions/1
     def show
       @script_extensions = Script::Extension.friendly.find(params[:id])
-      @versions = PhcdevworksScripts::ExtensionVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script::Extension')
+      @versions = PhcdevworksScripts::ScriptExtensionVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script::Extension')
     end
 
     # GET /script/extensions/new
@@ -76,7 +76,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def script_extension_params
-      params.require(:script_extension).permit(:extension_name, :extension_description, :extension, :slug, :user_id, :org_id)
+      params.require(:script_extension).permit(:script_extension_name, :script_extension_description, :script_extension, :slug, :user_id, :org_id)
     end
 
   end

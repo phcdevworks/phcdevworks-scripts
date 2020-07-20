@@ -17,7 +17,7 @@ module PhcdevworksScripts
     # GET /script/listings/1
     def show
       @script_listings = Script::Listing.friendly.find(params[:id])
-      @versions = PhcdevworksScripts::ListingVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script_::Listing')
+      @versions = PhcdevworksScripts::ScriptListingVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script::Listing')
     end
 
     # GET /script/listings/new
@@ -76,7 +76,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def script_listing_params
-      params.require(:script_listing).permit(:listing_title, :listing_description, :listing_script_source, :listing_script_website, :listing_script_repo, :listing_script_initial_release, :listing_script_lastest_release, :listing_script_beta_release, :listing_script_lastest_release_cdn, :listing_script_status, :author_id, :slug, :user_id, :org_id)
+      params.require(:script_listing).permit(:script_listing_title, :script_listing_description, :script_listing_script_source, :script_listing_script_website, :script_listing_script_repo, :script_listing_script_initial_release, :listing_script_lastest_release, :script_listing_script_beta_release, :script_listing_script_lastest_release, :script_listing_script_lastest_release_cdn, :author_id, :slug, :user_id, :org_id)
     end
 
   end

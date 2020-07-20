@@ -17,7 +17,7 @@ module PhcdevworksScripts
     # GET /script/authors/1
     def show
       @script_authors = Script::Author.friendly.find(params[:id])
-      @versions = PhcdevworksScripts::AuthorVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script::Author')
+      @versions = PhcdevworksScripts::ScriptAuthorVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script::Author')
     end
 
     # GET /script/authors/new
@@ -76,7 +76,7 @@ module PhcdevworksScripts
 
     # Whitelist
     def script_author_params
-      params.require(:script_author).permit(:author_first_name, :author_last_name, :author_website, :author_github, :slug, :user_id, :org_id)
+      params.require(:script_author).permit(:script_author_first_name, :script_author_last_name, :script_author_website, :script_author_github, :slug, :user_id, :org_id)
     end
 
   end

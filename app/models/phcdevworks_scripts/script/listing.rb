@@ -12,26 +12,26 @@ module PhcdevworksScripts
     belongs_to :author, class_name: 'PhcdevworksScripts::Script::Author'
 
     # Form Fields Validation
-    validates :listing_title,
+    validates :script_listing_title,
       presence: true
 
-    validates :listing_description,
+    validates :script_listing_description,
       presence: true
 
-    validates :listing_script_source,
+    validates :script_listing_script_source,
       format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
 
-    validates :listing_script_website,
+    validates :script_listing_script_website,
       format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
 
-    validates :listing_script_repo,
+    validates :script_listing_script_repo,
       format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
 
     # Clean URL Define
-    friendly_id :phcdev_script_listing_nice_urls, use: [:slugged, :finders]
+    friendly_id :script_listing_nice_urls, use: [:slugged, :finders]
 
-    def phcdev_script_listing_nice_urls
-      [:listing_title]
+    def script_listing_nice_urls
+      [:script_listing_title]
     end
 
   end

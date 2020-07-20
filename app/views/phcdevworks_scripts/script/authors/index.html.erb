@@ -48,10 +48,10 @@
 						<tbody>
 							<% @script_authors.each do |script_author| %>
 								<tr>
-									<td><%= link_to script_author.author_first_name, script_author %></td>
-									<td><%= link_to script_author.author_last_name, script_author %></td>
-									<td><%= link_to script_author.author_website, script_author %></td>
-									<td><%= link_to script_author.author_github, script_author %></td>
+									<td><%= link_to script_author.script_author_first_name, script_author %></td>
+									<td><%= link_to script_author.script_author_last_name, script_author %></td>
+									<td><%= link_to script_author.script_author_website, script_author %></td>
+									<td><%= link_to script_author.script_author_github, script_author %></td>
 								</tr>
 							<% end %>
 						</tbody>

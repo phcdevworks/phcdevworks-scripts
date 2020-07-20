@@ -47,8 +47,8 @@
                         <tbody>
                             <% @snippet_posts.each do |snippet_post| %>
                                 <tr>
-                                    <td><%= snippet_post.snippet_title %></td>
-                                    <td><%= truncate(snippet_post.snippet_code, :length => 80) %></td>
+                                    <td><%= snippet_post.snippet_post_title %></td>
+                                    <td><%= truncate(snippet_post.snippet_post_code, :length => 80, :escape => false) %></td>
                                     <td>
                                         <div class="btn-group d-flex" role="group">
                                             <%= link_to "Snippet Details", snippet_post, class: "btn btn-purple btn-xs" %>

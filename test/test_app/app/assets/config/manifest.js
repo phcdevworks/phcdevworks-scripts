@@ -5,3 +5,5 @@
 //= link phcdevworks_accounts/application.js
 //= link phcdevworks_scripts/application.css
 //= link phcdevworks_scripts/application.js
+//= link phcdevworks_core_modules/application.css
+//= link phcdevworks_core_modules/application.js

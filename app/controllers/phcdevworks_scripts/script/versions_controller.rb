@@ -17,7 +17,7 @@ module PhcdevworksScripts
     # GET /script/versions/1
     def show
       @script_versions = Script::Version.friendly.find(params[:id])
-      @versions = PhcdevworksScripts::ScriptversionVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script::Version')
+      @versions = PhcdevworksScripts::ScriptVersionVersions.where(item_id: params[:id], item_type: 'PhcdevworksScripts::Script::Version')
     end
 
     # GET /script/versions/new

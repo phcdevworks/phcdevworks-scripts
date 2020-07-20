@@ -11,17 +11,17 @@ module PhcdevworksScripts
     has_many :urls, class_name: 'PhcdevworksScripts::Snippet::Url'
 
     # Form Fields Validation
-    validates :snippet_title,
+    validates :snippet_post_title,
       presence: true
 
-    validates :snippet_code,
+    validates :snippet_post_code,
       presence: true
 
     # Clean URL Define
-    friendly_id :phcdev_snippet_post_nice_urls, use: [:slugged, :finders]
+    friendly_id :snippet_post_nice_urls, use: [:slugged, :finders]
 
-    def phcdev_snippet_post_nice_urls
-      [:snippet_title]
+    def snippet_post_nice_urls
+      [:snippet_post_title]
     end
 
   end

@@ -10,14 +10,14 @@ module PhcdevworksScripts
     belongs_to :version, class_name: 'PhcdevworksScripts::Script::Version', optional: true
 
     # Form Fields Validation
-    validates :cdn_url,
+    validates :script_cdn_url,
       presence: true,
       format: { with: URI::regexp(%w(http https)), message: "Please follow this URL format http or https://www.**********.com" }
 
-    validates :cdn_url_release,
+    validates :script_cdn_url_release,
       presence: true
 
-    validates :cdn_url_cdn_update,
+    validates :script_cdn_url_cdn_update,
       presence: true
 
   end

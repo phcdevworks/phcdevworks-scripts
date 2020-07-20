@@ -16,9 +16,9 @@ module PhcdevworksScripts
       presence: true
 
     # Clean URL Define
-    friendly_id :phcdev_script_version_nice_urls, use: [:slugged, :finders]
+    friendly_id :script_version_nice_urls, use: [:slugged, :finders]
 
-    def phcdev_script_version_nice_urls
+    def script_version_nice_urls
       [:script_version_number]
     end
 

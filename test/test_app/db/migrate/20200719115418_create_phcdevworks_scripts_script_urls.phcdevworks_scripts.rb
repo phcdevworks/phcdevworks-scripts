@@ -3,9 +3,9 @@ class CreatePhcdevworksScriptsScriptUrls < ActiveRecord::Migration[6.0]
   def change
     create_table :phcdevworks_scripts_script_urls do |t|
 
-      t.string :cdn_url
-      t.date :cdn_url_release
-      t.date :cdn_url_cdn_update
+      t.string :script_cdn_url
+      t.date :script_cdn_url_release
+      t.date :script_cdn_url_cdn_update
 
       t.string :slug
       t.string :user_id
