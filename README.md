@@ -1,35 +1,28 @@
-### PHCDevworks Scripts Documentation  
+# PhcdevworksScripts
+Short description and motivation.
 
-PHCDevworks Scripts Rails 6 script management engine for website script CDN and snippet listings
+## Usage
+How to use my plugin.
 
-- Manage script CDN listings for websites.
-- Main script title and description.
-- Script versions and script CDN URLs.
-- Store script snippets and URLs.
+## Installation
+Add this line to your application's Gemfile:
 
-#### Step 1 - Add PHCDevworks Scripts to your gemfile  and run command  
+```ruby
+gem 'phcdevworks_scripts'
+```
 
-	gem 'phcscriptcdnpro'
-	bundle install
+And then execute:
+```bash
+$ bundle
+```
 
-#### Step 2 - Copy PHCDevworks Scripts Database Tables
-To copy PHCScriptCDN's required database migrations, copy each command individually to your terminal's command line.
+Or install it yourself as:
+```bash
+$ gem install phcdevworks_scripts
+```
 
-	rails phcdevworks_scripts:install:migrations
-	rails db:migrate
+## Contributing
+Contribution directions go here.
 
-#### Step 3 - Mount PHCDevworks Scripts & Add Routes
-Mount PHCMembers by adding code below to your routes file.  
-
-	mount Phcscriptcdnpro::Engine, :at => '/'
-
-#### Step 4 - Recompile Assets  
-To properly function re-compile your application's assets to copy over required files.
-
-	rails assets:clobber
-	rails assets:precompile  
-
-#### Step 5 - Generate Contact Form View (Customization)  
-All PHCDevworks Scripts views and layouts can be overwritten by copying files to your application.
-
-	rails generate phcdevworks_scripts:views
+## License
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
