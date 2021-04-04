@@ -26,8 +26,9 @@ PhcdevworksScripts::Engine.routes.draw do
         end
     end
 
-  # Mount Routes
-  mount PhcdevworksAccounts::Engine, :at => '/'
-  mount PhcdevworksCoreModules::Engine, :at => '/'
+    # Mount Routes
+    mount PhcdevworksAccounts::Engine, :at => '/'
+    mount PhcdevworksAccountsStripe::Engine, :at => '/'
+    mount PhcdevworksCoreModules::Engine, :at => '/'
 
 end
